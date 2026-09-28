@@ -1,0 +1,87 @@
+# Entity: aaa_audit_logs_v2_product_categories_response_collection
+
+main: kit: entity: aaa_audit_logs_v2_product_categories_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      sh: "Indicates whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "aaa_audit_logs_v2_product_categories_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/audit/product_categories"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a67e14daa5f8dceeb91fe5449ba496ef"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/audit/product_categories"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "audit"
+            }
+            {
+              lit: "product_categories"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

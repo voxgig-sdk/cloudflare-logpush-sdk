@@ -1,0 +1,26 @@
+# BasicLexDatasetSummaryListFlow
+
+main: kit: flow: BasicLexDatasetSummaryListFlow:
+{
+  entity: "lex_dataset_summary_list",
+  kind: "basic",
+  name: "BasicLexDatasetSummaryListFlow",
+  step: [
+    {
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lex_dataset_summary_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLexDatasetSummaryListFlow"
+}

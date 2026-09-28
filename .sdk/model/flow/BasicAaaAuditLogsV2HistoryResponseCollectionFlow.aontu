@@ -1,0 +1,27 @@
+# BasicAaaAuditLogsV2HistoryResponseCollectionFlow
+
+main: kit: flow: BasicAaaAuditLogsV2HistoryResponseCollectionFlow:
+{
+  entity: "aaa_audit_logs_v2_history_response_collection",
+  kind: "basic",
+  name: "BasicAaaAuditLogsV2HistoryResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        audit_id: "audit01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aaa_audit_logs_v2_history_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAaaAuditLogsV2HistoryResponseCollectionFlow"
+}

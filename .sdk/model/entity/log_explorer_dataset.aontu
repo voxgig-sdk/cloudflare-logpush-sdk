@@ -1,0 +1,156 @@
+# Entity: log_explorer_dataset
+
+main: kit: entity: log_explorer_dataset: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "log_explorer_dataset"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              dataset_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "id"
+              "zone_id"
+            ]
+          }
+          r: {
+            param: {
+              dataset_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

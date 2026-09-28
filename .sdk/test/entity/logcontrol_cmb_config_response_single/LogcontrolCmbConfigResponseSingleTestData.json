@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "logcontrol_cmb_config_response_single": {
+      "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE00": {
+        "allow_out_of_region_access": true,
+        "regions": "s1f",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE00"
+      },
+      "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE01": {
+        "allow_out_of_region_access": true,
+        "regions": "s3d",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE01"
+      },
+      "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE02": {
+        "allow_out_of_region_access": true,
+        "regions": "s5b",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "logcontrol_cmb_config_response_single": {
+      "logcontrol_cmb_config_response_single_ref01": {
+        "allow_out_of_region_access": true,
+        "regions": "s79",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logs/control/cmb/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logs/control/cmb/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

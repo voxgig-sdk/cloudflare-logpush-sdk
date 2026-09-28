@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "logcontrol_cmb_config_for_an_account": {
+      "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT00": {
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT00"
+      },
+      "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT01": {
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT01"
+      },
+      "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT02": {
+        "account_id": "ACCOUNT01",
+        "id": "LOGCONTROL_CMB_CONFIG_FOR_AN_ACCOUNT02"
+      }
+    }
+  },
+  "new": {
+    "logcontrol_cmb_config_for_an_account": {
+      "logcontrol_cmb_config_for_an_account_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/logs/control/cmb/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

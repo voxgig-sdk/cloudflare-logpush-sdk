@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// CloudflareLogpush SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+CloudflareLogpushUtility::setRegistrar(function (CloudflareLogpushUtility $u): void {
+    $u->clean = [CloudflareLogpushClean::class, 'call'];
+    $u->done = [CloudflareLogpushDone::class, 'call'];
+    $u->make_error = [CloudflareLogpushMakeError::class, 'call'];
+    $u->feature_add = [CloudflareLogpushFeatureAdd::class, 'call'];
+    $u->feature_hook = [CloudflareLogpushFeatureHook::class, 'call'];
+    $u->feature_init = [CloudflareLogpushFeatureInit::class, 'call'];
+    $u->fetcher = [CloudflareLogpushFetcher::class, 'call'];
+    $u->make_fetch_def = [CloudflareLogpushMakeFetchDef::class, 'call'];
+    $u->make_context = [CloudflareLogpushMakeContext::class, 'call'];
+    $u->make_options = [CloudflareLogpushMakeOptions::class, 'call'];
+    $u->make_request = [CloudflareLogpushMakeRequest::class, 'call'];
+    $u->make_response = [CloudflareLogpushMakeResponse::class, 'call'];
+    $u->make_result = [CloudflareLogpushMakeResult::class, 'call'];
+    $u->make_point = [CloudflareLogpushMakePoint::class, 'call'];
+    $u->make_spec = [CloudflareLogpushMakeSpec::class, 'call'];
+    $u->make_url = [CloudflareLogpushMakeUrl::class, 'call'];
+    $u->param = [CloudflareLogpushParam::class, 'call'];
+    $u->prepare_auth = [CloudflareLogpushPrepareAuth::class, 'call'];
+    $u->prepare_body = [CloudflareLogpushPrepareBody::class, 'call'];
+    $u->prepare_headers = [CloudflareLogpushPrepareHeaders::class, 'call'];
+    $u->prepare_method = [CloudflareLogpushPrepareMethod::class, 'call'];
+    $u->prepare_params = [CloudflareLogpushPrepareParams::class, 'call'];
+    $u->prepare_path = [CloudflareLogpushPreparePath::class, 'call'];
+    $u->prepare_query = [CloudflareLogpushPrepareQuery::class, 'call'];
+    $u->graphql_body = [CloudflareLogpushGraphql::class, 'body'];
+    $u->graphql_errors = [CloudflareLogpushGraphql::class, 'errors'];
+    $u->result_basic = [CloudflareLogpushResultBasic::class, 'call'];
+    $u->result_body = [CloudflareLogpushResultBody::class, 'call'];
+    $u->result_headers = [CloudflareLogpushResultHeaders::class, 'call'];
+    $u->transform_request = [CloudflareLogpushTransformRequest::class, 'call'];
+    $u->transform_response = [CloudflareLogpushTransformResponse::class, 'call'];
+});

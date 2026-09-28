@@ -1,0 +1,220 @@
+# Entity: logpush_transformer_response_single
+
+main: kit: entity: logpush_transformer_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    code: {
+      h: "Code"
+      n: "code"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The SQL transformer query."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Optional customer-provided description."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Customer-provided name for identification."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "logpush_transformer_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logpush/transformers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logpush/transformers"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logpush/transformers/{transformer_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 42
+                k: "param"
+                n: "transformer_id"
+                or: "transformer_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logpush/transformers/{transformer_id}"
+          q: {
+            exist: [
+              "account_id"
+              "transformer_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+            {
+              var: "transformer_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/logpush/transformers/{transformer_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 42
+                k: "param"
+                n: "transformer_id"
+                or: "transformer_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/logpush/transformers/{transformer_id}"
+          q: {
+            exist: [
+              "account_id"
+              "transformer_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+            {
+              var: "transformer_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

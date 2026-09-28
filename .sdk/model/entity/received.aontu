@@ -1,0 +1,120 @@
+# Entity: received
+
+main: kit: entity: received: {
+
+  alias: field: {}
+
+  name: "received"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logs/received"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "count"
+                or: "count"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "2018-05-20T10:01:00Z"
+                k: "query"
+                n: "end"
+                or: "end"
+                r: true
+                t: "`$ANY`"
+              }
+              {
+                ex: "ClientIP,RayID,EdgeStartTimestamp"
+                k: "query"
+                n: "field"
+                or: "field"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 0.1
+                k: "query"
+                n: "sample"
+                or: "sample"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "2018-05-20T10:00:00Z"
+                k: "query"
+                n: "start"
+                or: "start"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                ex: "unixnano"
+                k: "query"
+                n: "timestamp"
+                or: "timestamp"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logs/received"
+          q: {
+            exist: [
+              "count"
+              "end"
+              "field"
+              "sample"
+              "start"
+              "timestamp"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "received"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

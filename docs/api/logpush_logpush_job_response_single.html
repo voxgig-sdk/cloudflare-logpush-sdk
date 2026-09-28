@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LogpushLogpushJobResponseSingle | Cloudflare Logpush</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Logpush<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-logpush-sdk">voxgig-sdk/cloudflare-logpush-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Logpush</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_history_response_collection.html">AaaAuditLogsV2HistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_product_categories_response_collection.html">AaaAuditLogsV2ProductCategoriesResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_response_collection.html">AaaAuditLogsV2ResponseCollection</a>
+<a href="../api/lex_available_destination_list.html">LexAvailableDestinationList</a>
+<a href="../api/lex_dataset_detail.html">LexDatasetDetail</a>
+<a href="../api/lex_dataset_summary_list.html">LexDatasetSummaryList</a>
+<a href="../api/lex_query.html">LexQuery</a>
+<a href="../api/log_explorer_dataset.html">LogExplorerDataset</a>
+<a href="../api/logcontrol_cmb_config_for_an_account.html">LogcontrolCmbConfigForAnAccount</a>
+<a href="../api/logcontrol_cmb_config_response_single.html">LogcontrolCmbConfigResponseSingle</a>
+<a href="../api/logcontrol_retention_flag_response_single.html">LogcontrolRetentionFlagResponseSingle</a>
+<a href="../api/logpull.html">Logpull</a>
+<a href="../api/logpush_destination_exist.html">LogpushDestinationExist</a>
+<a href="../api/logpush_get_ownership.html">LogpushGetOwnership</a>
+<a href="../api/logpush_instant_logs_job_response_collection.html">LogpushInstantLogsJobResponseCollection</a>
+<a href="../api/logpush_instant_logs_job_response_single.html">LogpushInstantLogsJobResponseSingle</a>
+<a href="../api/logpush_jobs_for_a_zone.html">LogpushJobsForAZone</a>
+<a href="../api/logpush_jobs_for_an_account.html">LogpushJobsForAnAccount</a>
+<a href="../api/logpush_logpush_field_response_collection.html">LogpushLogpushFieldResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_collection.html">LogpushLogpushJobResponseCollection</a>
+<a aria-current="page" href="../api/logpush_logpush_job_response_single.html">LogpushLogpushJobResponseSingle</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idlogpushjobs">POST /accounts/{account_id}/logpush/jobs</a>
+<a class="nav-section" href="#post-zoneszone_idlogpushjobs">POST /zones/{zone_id}/logpush/jobs</a>
+<a class="nav-section" href="#get-accountsaccount_idlogpushjobsjob_id">GET /accounts/{account_id}/logpush/jobs/{job_id}</a>
+<a class="nav-section" href="#get-zoneszone_idlogpushjobsjob_id">GET /zones/{zone_id}/logpush/jobs/{job_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idlogpushjobsjob_id">PUT /accounts/{account_id}/logpush/jobs/{job_id}</a>
+<a class="nav-section" href="#put-zoneszone_idlogpushjobsjob_id">PUT /zones/{zone_id}/logpush/jobs/{job_id}</a></div>
+<a href="../api/logpush_transformer_content.html">LogpushTransformerContent</a>
+<a href="../api/logpush_transformer_delete.html">LogpushTransformerDelete</a>
+<a href="../api/logpush_transformer_preview.html">LogpushTransformerPreview</a>
+<a href="../api/logpush_transformer_response_collection.html">LogpushTransformerResponseCollection</a>
+<a href="../api/logpush_transformer_response_single.html">LogpushTransformerResponseSingle</a>
+<a href="../api/logpush_transformer_version_response_collection.html">LogpushTransformerVersionResponseCollection</a>
+<a href="../api/logpush_validate.html">LogpushValidate</a>
+<a href="../api/logpush_validate_ownership.html">LogpushValidateOwnership</a>
+<a href="../api/logshare_field.html">LogshareField</a>
+<a href="../api/rayid.html">Rayid</a>
+<a href="../api/received.html">Received</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="logpushlogpushjobresponsesingle">LogpushLogpushJobResponseSingle</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idlogpushjobs"><code>/accounts/{account_id}/logpush/jobs</code></a></td>
+<td><code>create</code></td>
+<td>Create Logpush job response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-zoneszone_idlogpushjobs"><code>/zones/{zone_id}/logpush/jobs</code></a></td>
+<td><code>create</code></td>
+<td>Create Logpush job response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idlogpushjobsjob_id"><code>/accounts/{account_id}/logpush/jobs/{job_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get Logpush job details response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-zoneszone_idlogpushjobsjob_id"><code>/zones/{zone_id}/logpush/jobs/{job_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get Logpush job details response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idlogpushjobsjob_id"><code>/accounts/{account_id}/logpush/jobs/{job_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update Logpush job response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-zoneszone_idlogpushjobsjob_id"><code>/zones/{zone_id}/logpush/jobs/{job_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update Logpush job response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">logpush_logpush_job_response_single, err := client.LogpushLogpushJobResponseSingle(nil).Load(map[string]any{&quot;job_id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(logpush_logpush_job_response_single)
+created, err := client.LogpushLogpushJobResponseSingle(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;destination_conf&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.LogpushLogpushJobResponseSingle(nil).Update(map[string]any{&quot;job_id&quot;: 1, &quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local logpush_logpush_job_response_single, err = client:LogpushLogpushJobResponseSingle():load({ job_id = 1 })
+local created, err = client:LogpushLogpushJobResponseSingle():create({ account_id = &quot;example&quot;, destination_conf = &quot;example&quot; })
+local updated, err = client:LogpushLogpushJobResponseSingle():update({ job_id = 1, account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$logpush_logpush_job_response_single = $client-&gt;LogpushLogpushJobResponseSingle()-&gt;load([&quot;job_id&quot; =&gt; 1]);
+$created = $client-&gt;LogpushLogpushJobResponseSingle()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;destination_conf&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;LogpushLogpushJobResponseSingle()-&gt;update([&quot;job_id&quot; =&gt; 1, &quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">logpush_logpush_job_response_single = client.LogpushLogpushJobResponseSingle().load({&quot;job_id&quot;: 1})
+created = client.LogpushLogpushJobResponseSingle().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;destination_conf&quot;: &quot;example&quot; })
+updated = client.LogpushLogpushJobResponseSingle().update({&quot;job_id&quot;: 1, &quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">logpush_logpush_job_response_single = client.LogpushLogpushJobResponseSingle.load({ &quot;job_id&quot; =&gt; 1 })
+created = client.LogpushLogpushJobResponseSingle.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;destination_conf&quot; =&gt; &quot;example&quot; })
+updated = client.LogpushLogpushJobResponseSingle.update({ &quot;job_id&quot; =&gt; 1, &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const logpush_logpush_job_response_single = await client.LogpushLogpushJobResponseSingle().load({ job_id: 1 })
+const created = await client.LogpushLogpushJobResponseSingle().create({ account_id: &quot;example&quot;, destination_conf: &quot;example&quot; })
+const updated = await client.LogpushLogpushJobResponseSingle().update({ job_id: 1, account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the dataset.</td>
+</tr>
+<tr>
+<td><code>destination_conf</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uniquely identifies a resource (such as an s3 bucket) where data.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Flag that indicates if the job is enabled.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The filters to select the events to include and/or remove from your logs.</td>
+</tr>
+<tr>
+<td><code>filter_attack_traffic</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, excludes DDoS attack traffic from logs.</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>This field is deprecated.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</td>
+</tr>
+<tr>
+<td><code>logpull_options</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>This field is deprecated.</td>
+</tr>
+<tr>
+<td><code>max_upload_bytes</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The maximum uncompressed file size of a batch of logs.</td>
+</tr>
+<tr>
+<td><code>max_upload_interval_seconds</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The maximum interval in seconds for log batches.</td>
+</tr>
+<tr>
+<td><code>max_upload_records</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The maximum number of log lines per batch.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional human readable job name.</td>
+</tr>
+<tr>
+<td><code>output_options</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The structured replacement for <code>logpull_options</code>.</td>
+</tr>
+<tr>
+<td><code>ownership_challenge</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Ownership challenge token to prove destination ownership.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idlogpushjobs" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/logpush/jobs</h3>
+<p>Operation ID: <code>post-accounts-account_id-logpush-jobs</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td><code>enum: access_requests, account_abuse_protection_events, audit_logs, audit_logs_v2, biso_user_actions, casb_findings, ...</code></td>
+<td>No</td>
+<td>Name of the dataset. A list of supported datasets can be found on the <a href="https://developers.cloudflare.com/logs/reference/log-fields/">Developer Docs</a>.</td>
+</tr>
+<tr>
+<td><code>destination_conf</code></td>
+<td><code>string (uri)</code></td>
+<td>Yes</td>
+<td>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Flag that indicates if the job is enabled.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The filters to select the events to include and/or remove from your logs. For more information, refer to <a href="https://developers.cloudflare.com/logs/reference/filters/">Filters</a>.</td>
+</tr>
+<tr>
+<td><code>filter_attack_traffic</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, excludes DDoS attack traffic from logs. This option is supported for the <code>http_requests</code>, <code>firewall_events</code>, and <code>network_analytics_logs</code> datasets.</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>enum: high, low</code></td>
+<td>No</td>
+<td>This field is deprecated. Please use ``max_upload<code>_*</code> parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>enum: , edge</code></td>
+<td>No</td>
+<td>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</td>
+</tr>
+<tr>
+<td><code>logpull_options</code></td>
+<td><code>string (uri-reference)</code></td>
+<td>No</td>
+<td>This field is deprecated. Use <code>output_options</code> instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</td>
+</tr>
+<tr>
+<td><code>max_upload_bytes</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum uncompressed file size of a batch of logs. This setting value must be between <code>5 MB</code> and <code>1 GB</code>, or <code>0</code> to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size.</td>
+</tr>
+<tr>
+<td><code>max_upload_interval_seconds</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or <code>0</code> to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this.</td>
+</tr>
+<tr>
+<td><code>max_upload_records</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or <code>0</code> to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.</td>
+</tr>
+<tr>
+<td><code>output_options</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The structured replacement for <code>logpull_options</code>. When including this field, the <code>logpull_option</code> field will be ignored.</td>
+</tr>
+<tr>
+<td><code>output_options.CVE-2021-44228</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, will cause all occurrences of <code>$&amp;#123;</code> in the generated files to be replaced with <code>x&amp;#123;</code>.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.field_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to join fields. This field be ignored when <code>record_template</code> is set.</td>
+</tr>
+<tr>
+<td><code>output_options.field_names</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.</td>
+</tr>
+<tr>
+<td><code>output_options.merge_subrequests</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, subrequests will be merged into the parent request. Only supported for the <code>http_requests</code> dataset.</td>
+</tr>
+<tr>
+<td><code>output_options.output_type</code></td>
+<td><code>enum: ndjson, csv</code></td>
+<td>No</td>
+<td>Specifies the output type, such as <code>ndjson</code> or <code>csv</code>. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</td>
+</tr>
+<tr>
+<td><code>output_options.record_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be inserted in-between the records as separator.</td>
+</tr>
+<tr>
+<td><code>output_options.record_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_template</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in <code>field_names</code> as well, otherwise they will end up as null. Format as a Go <code>text/template</code> without any standard functions, like conditionals, loops, sub-templates, etc.</td>
+</tr>
+<tr>
+<td><code>output_options.sample_rate</code></td>
+<td><code>number (float)</code></td>
+<td>No</td>
+<td>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current <code>sample_interval</code> of the data.</td>
+</tr>
+<tr>
+<td><code>output_options.timestamp_format</code></td>
+<td><code>enum: unixnano, unix, rfc3339, rfc3339ms, rfc3339ns</code></td>
+<td>No</td>
+<td>String to specify the format for timestamps, such as <code>unixnano</code>, <code>unix</code>, <code>rfc3339</code>, <code>rfc3339ms</code> or <code>rfc3339ns</code>.</td>
+</tr>
+<tr>
+<td><code>ownership_challenge</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Ownership challenge token to prove destination ownership.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request body:</p>
+<pre><code class="language-json">{
+  &quot;dataset&quot;: &quot;gateway_dns&quot;,
+  &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+  &quot;enabled&quot;: false,
+  &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+  &quot;kind&quot;: &quot;&quot;,
+  &quot;max_upload_bytes&quot;: 5000000,
+  &quot;max_upload_interval_seconds&quot;: 30,
+  &quot;max_upload_records&quot;: 1000,
+  &quot;name&quot;: &quot;example.com&quot;,
+  &quot;output_options&quot;: {
+    &quot;CVE-2021-44228&quot;: false,
+    &quot;batch_prefix&quot;: &quot;&quot;,
+    &quot;batch_suffix&quot;: &quot;&quot;,
+    &quot;field_delimiter&quot;: &quot;,&quot;,
+    &quot;field_names&quot;: [
+      &quot;Datetime&quot;,
+      &quot;DstIP&quot;,
+      &quot;SrcIP&quot;
+    ],
+    &quot;output_type&quot;: &quot;ndjson&quot;,
+    &quot;record_delimiter&quot;: &quot;&quot;,
+    &quot;record_prefix&quot;: &quot;{&quot;,
+    &quot;record_suffix&quot;: &quot;}\n&quot;,
+    &quot;sample_rate&quot;: 1,
+    &quot;timestamp_format&quot;: &quot;unixnano&quot;
+  },
+  &quot;ownership_challenge&quot;: &quot;00000000000000000000&quot;
+}
+</code></pre>
+<h4 id="responses">Responses</h4>
+<h5 id="200-create-logpush-job-response" class="status" data-status="2xx">200: Create Logpush job response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;gateway_dns&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-create-logpush-job-response-failure">4XX: Create Logpush job response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h3 id="post-zoneszone_idlogpushjobs" class="operation" data-method="post"><code>POST</code> /zones/{zone_id}/logpush/jobs</h3>
+<p>Operation ID: <code>post-zones-zone_id-logpush-jobs</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td><code>enum: access_requests, account_abuse_protection_events, audit_logs, audit_logs_v2, biso_user_actions, casb_findings, ...</code></td>
+<td>No</td>
+<td>Name of the dataset. A list of supported datasets can be found on the <a href="https://developers.cloudflare.com/logs/reference/log-fields/">Developer Docs</a>.</td>
+</tr>
+<tr>
+<td><code>destination_conf</code></td>
+<td><code>string (uri)</code></td>
+<td>Yes</td>
+<td>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Flag that indicates if the job is enabled.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The filters to select the events to include and/or remove from your logs. For more information, refer to <a href="https://developers.cloudflare.com/logs/reference/filters/">Filters</a>.</td>
+</tr>
+<tr>
+<td><code>filter_attack_traffic</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, excludes DDoS attack traffic from logs. This option is supported for the <code>http_requests</code>, <code>firewall_events</code>, and <code>network_analytics_logs</code> datasets.</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>enum: high, low</code></td>
+<td>No</td>
+<td>This field is deprecated. Please use ``max_upload<code>_*</code> parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>enum: , edge</code></td>
+<td>No</td>
+<td>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</td>
+</tr>
+<tr>
+<td><code>logpull_options</code></td>
+<td><code>string (uri-reference)</code></td>
+<td>No</td>
+<td>This field is deprecated. Use <code>output_options</code> instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</td>
+</tr>
+<tr>
+<td><code>max_upload_bytes</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum uncompressed file size of a batch of logs. This setting value must be between <code>5 MB</code> and <code>1 GB</code>, or <code>0</code> to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size.</td>
+</tr>
+<tr>
+<td><code>max_upload_interval_seconds</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or <code>0</code> to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this.</td>
+</tr>
+<tr>
+<td><code>max_upload_records</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or <code>0</code> to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.</td>
+</tr>
+<tr>
+<td><code>output_options</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The structured replacement for <code>logpull_options</code>. When including this field, the <code>logpull_option</code> field will be ignored.</td>
+</tr>
+<tr>
+<td><code>output_options.CVE-2021-44228</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, will cause all occurrences of <code>$&amp;#123;</code> in the generated files to be replaced with <code>x&amp;#123;</code>.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.field_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to join fields. This field be ignored when <code>record_template</code> is set.</td>
+</tr>
+<tr>
+<td><code>output_options.field_names</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.</td>
+</tr>
+<tr>
+<td><code>output_options.merge_subrequests</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, subrequests will be merged into the parent request. Only supported for the <code>http_requests</code> dataset.</td>
+</tr>
+<tr>
+<td><code>output_options.output_type</code></td>
+<td><code>enum: ndjson, csv</code></td>
+<td>No</td>
+<td>Specifies the output type, such as <code>ndjson</code> or <code>csv</code>. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</td>
+</tr>
+<tr>
+<td><code>output_options.record_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be inserted in-between the records as separator.</td>
+</tr>
+<tr>
+<td><code>output_options.record_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_template</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in <code>field_names</code> as well, otherwise they will end up as null. Format as a Go <code>text/template</code> without any standard functions, like conditionals, loops, sub-templates, etc.</td>
+</tr>
+<tr>
+<td><code>output_options.sample_rate</code></td>
+<td><code>number (float)</code></td>
+<td>No</td>
+<td>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current <code>sample_interval</code> of the data.</td>
+</tr>
+<tr>
+<td><code>output_options.timestamp_format</code></td>
+<td><code>enum: unixnano, unix, rfc3339, rfc3339ms, rfc3339ns</code></td>
+<td>No</td>
+<td>String to specify the format for timestamps, such as <code>unixnano</code>, <code>unix</code>, <code>rfc3339</code>, <code>rfc3339ms</code> or <code>rfc3339ns</code>.</td>
+</tr>
+<tr>
+<td><code>ownership_challenge</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Ownership challenge token to prove destination ownership.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request body:</p>
+<pre><code class="language-json">{
+  &quot;dataset&quot;: &quot;http_requests&quot;,
+  &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+  &quot;enabled&quot;: false,
+  &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+  &quot;kind&quot;: &quot;&quot;,
+  &quot;max_upload_bytes&quot;: 5000000,
+  &quot;max_upload_interval_seconds&quot;: 30,
+  &quot;max_upload_records&quot;: 1000,
+  &quot;name&quot;: &quot;example.com&quot;,
+  &quot;output_options&quot;: {
+    &quot;CVE-2021-44228&quot;: false,
+    &quot;batch_prefix&quot;: &quot;&quot;,
+    &quot;batch_suffix&quot;: &quot;&quot;,
+    &quot;field_delimiter&quot;: &quot;,&quot;,
+    &quot;field_names&quot;: [
+      &quot;RayID&quot;,
+      &quot;ClientIP&quot;,
+      &quot;EdgeStartTimestamp&quot;
+    ],
+    &quot;output_type&quot;: &quot;ndjson&quot;,
+    &quot;record_delimiter&quot;: &quot;&quot;,
+    &quot;record_prefix&quot;: &quot;{&quot;,
+    &quot;record_suffix&quot;: &quot;}\n&quot;,
+    &quot;sample_rate&quot;: 1,
+    &quot;timestamp_format&quot;: &quot;unixnano&quot;
+  },
+  &quot;ownership_challenge&quot;: &quot;00000000000000000000&quot;
+}
+</code></pre>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-create-logpush-job-response-1" class="status" data-status="2xx">200: Create Logpush job response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;http_requests&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-create-logpush-job-response-failure-1">4XX: Create Logpush job response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idlogpushjobsjob_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/logpush/jobs/{job_id}</h3>
+<p>Operation ID: <code>get-accounts-account_id-logpush-jobs-job_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>job_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-logpush-job-details-response" class="status" data-status="2xx">200: Get Logpush job details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;gateway_dns&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-get-logpush-job-details-response-failure">4XX: Get Logpush job details response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h3 id="get-zoneszone_idlogpushjobsjob_id" class="operation" data-method="get"><code>GET</code> /zones/{zone_id}/logpush/jobs/{job_id}</h3>
+<p>Operation ID: <code>get-zones-zone_id-logpush-jobs-job_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>job_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-get-logpush-job-details-response-1" class="status" data-status="2xx">200: Get Logpush job details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;http_requests&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-get-logpush-job-details-response-failure-1">4XX: Get Logpush job details response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idlogpushjobsjob_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/logpush/jobs/{job_id}</h3>
+<p>Operation ID: <code>put-accounts-account_id-logpush-jobs-job_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>job_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>destination_conf</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Flag that indicates if the job is enabled.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The filters to select the events to include and/or remove from your logs. For more information, refer to <a href="https://developers.cloudflare.com/logs/reference/filters/">Filters</a>.</td>
+</tr>
+<tr>
+<td><code>filter_attack_traffic</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, excludes DDoS attack traffic from logs. This option is supported for the <code>http_requests</code>, <code>firewall_events</code>, and <code>network_analytics_logs</code> datasets.</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>enum: high, low</code></td>
+<td>No</td>
+<td>This field is deprecated. Please use ``max_upload<code>_*</code> parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>enum: , edge</code></td>
+<td>No</td>
+<td>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</td>
+</tr>
+<tr>
+<td><code>logpull_options</code></td>
+<td><code>string (uri-reference)</code></td>
+<td>No</td>
+<td>This field is deprecated. Use <code>output_options</code> instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</td>
+</tr>
+<tr>
+<td><code>max_upload_bytes</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum uncompressed file size of a batch of logs. This setting value must be between <code>5 MB</code> and <code>1 GB</code>, or <code>0</code> to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size.</td>
+</tr>
+<tr>
+<td><code>max_upload_interval_seconds</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or <code>0</code> to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this.</td>
+</tr>
+<tr>
+<td><code>max_upload_records</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or <code>0</code> to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.</td>
+</tr>
+<tr>
+<td><code>output_options</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The structured replacement for <code>logpull_options</code>. When including this field, the <code>logpull_option</code> field will be ignored.</td>
+</tr>
+<tr>
+<td><code>output_options.CVE-2021-44228</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, will cause all occurrences of <code>$&amp;#123;</code> in the generated files to be replaced with <code>x&amp;#123;</code>.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.field_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to join fields. This field be ignored when <code>record_template</code> is set.</td>
+</tr>
+<tr>
+<td><code>output_options.field_names</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.</td>
+</tr>
+<tr>
+<td><code>output_options.merge_subrequests</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, subrequests will be merged into the parent request. Only supported for the <code>http_requests</code> dataset.</td>
+</tr>
+<tr>
+<td><code>output_options.output_type</code></td>
+<td><code>enum: ndjson, csv</code></td>
+<td>No</td>
+<td>Specifies the output type, such as <code>ndjson</code> or <code>csv</code>. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</td>
+</tr>
+<tr>
+<td><code>output_options.record_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be inserted in-between the records as separator.</td>
+</tr>
+<tr>
+<td><code>output_options.record_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_template</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in <code>field_names</code> as well, otherwise they will end up as null. Format as a Go <code>text/template</code> without any standard functions, like conditionals, loops, sub-templates, etc.</td>
+</tr>
+<tr>
+<td><code>output_options.sample_rate</code></td>
+<td><code>number (float)</code></td>
+<td>No</td>
+<td>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current <code>sample_interval</code> of the data.</td>
+</tr>
+<tr>
+<td><code>output_options.timestamp_format</code></td>
+<td><code>enum: unixnano, unix, rfc3339, rfc3339ms, rfc3339ns</code></td>
+<td>No</td>
+<td>String to specify the format for timestamps, such as <code>unixnano</code>, <code>unix</code>, <code>rfc3339</code>, <code>rfc3339ms</code> or <code>rfc3339ns</code>.</td>
+</tr>
+<tr>
+<td><code>ownership_challenge</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Ownership challenge token to prove destination ownership.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request body:</p>
+<pre><code class="language-json">{
+  &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+  &quot;enabled&quot;: false,
+  &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+  &quot;kind&quot;: &quot;&quot;,
+  &quot;max_upload_bytes&quot;: 5000000,
+  &quot;max_upload_interval_seconds&quot;: 30,
+  &quot;max_upload_records&quot;: 1000,
+  &quot;output_options&quot;: {
+    &quot;CVE-2021-44228&quot;: false,
+    &quot;batch_prefix&quot;: &quot;&quot;,
+    &quot;batch_suffix&quot;: &quot;&quot;,
+    &quot;field_delimiter&quot;: &quot;,&quot;,
+    &quot;field_names&quot;: [
+      &quot;Datetime&quot;,
+      &quot;DstIP&quot;,
+      &quot;SrcIP&quot;
+    ],
+    &quot;output_type&quot;: &quot;ndjson&quot;,
+    &quot;record_delimiter&quot;: &quot;&quot;,
+    &quot;record_prefix&quot;: &quot;{&quot;,
+    &quot;record_suffix&quot;: &quot;}\n&quot;,
+    &quot;sample_rate&quot;: 1,
+    &quot;timestamp_format&quot;: &quot;unixnano&quot;
+  },
+  &quot;ownership_challenge&quot;: &quot;00000000000000000000&quot;
+}
+</code></pre>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-update-logpush-job-response" class="status" data-status="2xx">200: Update Logpush job response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;gateway_dns&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-update-logpush-job-response-failure">4XX: Update Logpush job response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h3 id="put-zoneszone_idlogpushjobsjob_id" class="operation" data-method="put"><code>PUT</code> /zones/{zone_id}/logpush/jobs/{job_id}</h3>
+<p>Operation ID: <code>put-zones-zone_id-logpush-jobs-job_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>job_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>destination_conf</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Flag that indicates if the job is enabled.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The filters to select the events to include and/or remove from your logs. For more information, refer to <a href="https://developers.cloudflare.com/logs/reference/filters/">Filters</a>.</td>
+</tr>
+<tr>
+<td><code>filter_attack_traffic</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, excludes DDoS attack traffic from logs. This option is supported for the <code>http_requests</code>, <code>firewall_events</code>, and <code>network_analytics_logs</code> datasets.</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>enum: high, low</code></td>
+<td>No</td>
+<td>This field is deprecated. Please use ``max_upload<code>_*</code> parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>enum: , edge</code></td>
+<td>No</td>
+<td>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</td>
+</tr>
+<tr>
+<td><code>logpull_options</code></td>
+<td><code>string (uri-reference)</code></td>
+<td>No</td>
+<td>This field is deprecated. Use <code>output_options</code> instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</td>
+</tr>
+<tr>
+<td><code>max_upload_bytes</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum uncompressed file size of a batch of logs. This setting value must be between <code>5 MB</code> and <code>1 GB</code>, or <code>0</code> to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size.</td>
+</tr>
+<tr>
+<td><code>max_upload_interval_seconds</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or <code>0</code> to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this.</td>
+</tr>
+<tr>
+<td><code>max_upload_records</code></td>
+<td><code>enum: 0 or integer</code></td>
+<td>No</td>
+<td>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or <code>0</code> to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional human readable job name. Not unique. Cloudflare suggests. that you set this to a meaningful string, like the domain name, to make it easier to identify your job.</td>
+</tr>
+<tr>
+<td><code>output_options</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The structured replacement for <code>logpull_options</code>. When including this field, the <code>logpull_option</code> field will be ignored.</td>
+</tr>
+<tr>
+<td><code>output_options.CVE-2021-44228</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, will cause all occurrences of <code>$&amp;#123;</code> in the generated files to be replaced with <code>x&amp;#123;</code>.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.batch_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each batch.</td>
+</tr>
+<tr>
+<td><code>output_options.field_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to join fields. This field be ignored when <code>record_template</code> is set.</td>
+</tr>
+<tr>
+<td><code>output_options.field_names</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.</td>
+</tr>
+<tr>
+<td><code>output_options.merge_subrequests</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If set to true, subrequests will be merged into the parent request. Only supported for the <code>http_requests</code> dataset.</td>
+</tr>
+<tr>
+<td><code>output_options.output_type</code></td>
+<td><code>enum: ndjson, csv</code></td>
+<td>No</td>
+<td>Specifies the output type, such as <code>ndjson</code> or <code>csv</code>. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</td>
+</tr>
+<tr>
+<td><code>output_options.record_delimiter</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be inserted in-between the records as separator.</td>
+</tr>
+<tr>
+<td><code>output_options.record_prefix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be prepended before each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_suffix</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to be appended after each record.</td>
+</tr>
+<tr>
+<td><code>output_options.record_template</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>String to use as template for each record instead of the default json key value mapping. All fields used in the template must be present in <code>field_names</code> as well, otherwise they will end up as null. Format as a Go <code>text/template</code> without any standard functions, like conditionals, loops, sub-templates, etc.</td>
+</tr>
+<tr>
+<td><code>output_options.sample_rate</code></td>
+<td><code>number (float)</code></td>
+<td>No</td>
+<td>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current <code>sample_interval</code> of the data.</td>
+</tr>
+<tr>
+<td><code>output_options.timestamp_format</code></td>
+<td><code>enum: unixnano, unix, rfc3339, rfc3339ms, rfc3339ns</code></td>
+<td>No</td>
+<td>String to specify the format for timestamps, such as <code>unixnano</code>, <code>unix</code>, <code>rfc3339</code>, <code>rfc3339ms</code> or <code>rfc3339ns</code>.</td>
+</tr>
+<tr>
+<td><code>ownership_challenge</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Ownership challenge token to prove destination ownership.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request body:</p>
+<pre><code class="language-json">{
+  &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+  &quot;enabled&quot;: false,
+  &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+  &quot;kind&quot;: &quot;&quot;,
+  &quot;max_upload_bytes&quot;: 5000000,
+  &quot;max_upload_interval_seconds&quot;: 30,
+  &quot;max_upload_records&quot;: 1000,
+  &quot;output_options&quot;: {
+    &quot;CVE-2021-44228&quot;: false,
+    &quot;batch_prefix&quot;: &quot;&quot;,
+    &quot;batch_suffix&quot;: &quot;&quot;,
+    &quot;field_delimiter&quot;: &quot;,&quot;,
+    &quot;field_names&quot;: [
+      &quot;RayID&quot;,
+      &quot;ClientIP&quot;,
+      &quot;EdgeStartTimestamp&quot;
+    ],
+    &quot;output_type&quot;: &quot;ndjson&quot;,
+    &quot;record_delimiter&quot;: &quot;&quot;,
+    &quot;record_prefix&quot;: &quot;{&quot;,
+    &quot;record_suffix&quot;: &quot;}\n&quot;,
+    &quot;sample_rate&quot;: 1,
+    &quot;timestamp_format&quot;: &quot;unixnano&quot;
+  },
+  &quot;ownership_challenge&quot;: &quot;00000000000000000000&quot;
+}
+</code></pre>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-update-logpush-job-response-1" class="status" data-status="2xx">200: Update Logpush job response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [],
+  &quot;messages&quot;: [],
+  &quot;result&quot;: {
+    &quot;dataset&quot;: &quot;http_requests&quot;,
+    &quot;destination_conf&quot;: &quot;s3://mybucket/logs?region=us-west-2&quot;,
+    &quot;enabled&quot;: false,
+    &quot;error_message&quot;: null,
+    &quot;filter&quot;: &quot;{\&quot;where\&quot;:{\&quot;and\&quot;:[{\&quot;key\&quot;:\&quot;ClientRequestPath\&quot;,\&quot;operator\&quot;:\&quot;contains\&quot;,\&quot;value\&quot;:\&quot;/static\&quot;},{\&quot;key\&quot;:\&quot;ClientRequestHost\&quot;,\&quot;operator\&quot;:\&quot;eq\&quot;,\&quot;value\&quot;:\&quot;example.com\&quot;}]}}&quot;,
+    &quot;id&quot;: 1,
+    &quot;kind&quot;: &quot;&quot;,
+    &quot;last_complete&quot;: null,
+    &quot;last_error&quot;: null,
+    &quot;max_upload_bytes&quot;: 5000000,
+    &quot;max_upload_interval_seconds&quot;: 30,
+    &quot;max_upload_records&quot;: 1000,
+    &quot;name&quot;: &quot;example.com&quot;,
+    &quot;output_options&quot;: {
+      &quot;CVE-2021-44228&quot;: false,
+      &quot;batch_prefix&quot;: &quot;&quot;,
+      &quot;batch_suffix&quot;: &quot;&quot;,
+      &quot;field_delimiter&quot;: &quot;,&quot;,
+      &quot;field_names&quot;: [
+        &quot;Datetime&quot;,
+        &quot;DstIP&quot;,
+        &quot;SrcIP&quot;
+      ],
+      &quot;output_type&quot;: &quot;ndjson&quot;,
+      &quot;record_delimiter&quot;: &quot;&quot;,
+      &quot;record_prefix&quot;: &quot;{&quot;,
+      &quot;record_suffix&quot;: &quot;}\n&quot;,
+      &quot;sample_rate&quot;: 1,
+      &quot;timestamp_format&quot;: &quot;unixnano&quot;
+    }
+  },
+  &quot;success&quot;: true
+}
+</code></pre>
+<h5 id="4xx-update-logpush-job-response-failure-1">4XX: Update Logpush job response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

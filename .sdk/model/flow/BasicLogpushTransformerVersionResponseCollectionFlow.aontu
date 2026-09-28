@@ -1,0 +1,27 @@
+# BasicLogpushTransformerVersionResponseCollectionFlow
+
+main: kit: flow: BasicLogpushTransformerVersionResponseCollectionFlow:
+{
+  entity: "logpush_transformer_version_response_collection",
+  kind: "basic",
+  name: "BasicLogpushTransformerVersionResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        transformer_id: "transformer01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "logpush_transformer_version_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogpushTransformerVersionResponseCollectionFlow"
+}

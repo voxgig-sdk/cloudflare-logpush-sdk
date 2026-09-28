@@ -1,0 +1,32 @@
+# BasicReceivedFlow
+
+main: kit: flow: BasicReceivedFlow:
+{
+  entity: "received",
+  kind: "basic",
+  name: "BasicReceivedFlow",
+  step: [
+    {
+      i: {
+        ref: "received_ref01",
+        srcdatavar: "received_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "received01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-received_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicReceivedFlow"
+}

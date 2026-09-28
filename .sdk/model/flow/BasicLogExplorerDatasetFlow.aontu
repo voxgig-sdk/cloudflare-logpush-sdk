@@ -1,0 +1,9 @@
+# BasicLogExplorerDatasetFlow
+
+main: kit: flow: BasicLogExplorerDatasetFlow:
+{
+  entity: "log_explorer_dataset",
+  kind: "basic",
+  name: "BasicLogExplorerDatasetFlow",
+  "key$": "BasicLogExplorerDatasetFlow"
+}

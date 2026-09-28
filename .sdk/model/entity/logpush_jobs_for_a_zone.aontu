@@ -1,0 +1,76 @@
+# Entity: logpush_jobs_for_a_zone
+
+main: kit: entity: logpush_jobs_for_a_zone: {
+
+  alias: field: {}
+
+  name: "logpush_jobs_for_a_zone"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /zones/{zone_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/zones/{zone_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "job_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

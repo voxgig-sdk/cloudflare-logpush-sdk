@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "logshare_field": {
+      "LOGSHARE_FIELD00": {
+        "key": "sa",
+        "zone_id": "ZONE01",
+        "id": "LOGSHARE_FIELD00"
+      },
+      "LOGSHARE_FIELD01": {
+        "key": "s14",
+        "zone_id": "ZONE01",
+        "id": "LOGSHARE_FIELD01"
+      },
+      "LOGSHARE_FIELD02": {
+        "key": "s1e",
+        "zone_id": "ZONE01",
+        "id": "LOGSHARE_FIELD02"
+      }
+    }
+  },
+  "new": {
+    "logshare_field": {
+      "logshare_field_ref01": {
+        "key": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/logs/received/fields": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

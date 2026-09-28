@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "lex_query": {
+      "LEX_QUERY00": {
+        "code": 60,
+        "errors": [],
+        "message": "s3e",
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LEX_QUERY00"
+      },
+      "LEX_QUERY01": {
+        "code": 120,
+        "errors": [],
+        "message": "s7a",
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LEX_QUERY01"
+      },
+      "LEX_QUERY02": {
+        "code": 180,
+        "errors": [],
+        "message": "sb6",
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LEX_QUERY02"
+      }
+    }
+  },
+  "new": {
+    "lex_query": {
+      "lex_query_ref01": {
+        "code": 240,
+        "errors": [],
+        "message": "sf2",
+        "messages": [],
+        "result": [],
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logs/explorer/query/sql": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logs/explorer/query/sql": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logs/explorer/query/sql": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logs/explorer/query/sql": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

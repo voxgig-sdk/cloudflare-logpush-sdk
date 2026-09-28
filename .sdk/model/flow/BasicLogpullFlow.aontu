@@ -1,0 +1,48 @@
+# BasicLogpullFlow
+
+main: kit: flow: BasicLogpullFlow:
+{
+  entity: "logpull",
+  kind: "basic",
+  name: "BasicLogpullFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "logpull_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "logpull_ref01",
+        srcdatavar: "logpull_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "logpull01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-logpull_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogpullFlow"
+}

@@ -1,0 +1,22 @@
+# BasicLogpushTransformerPreviewFlow
+
+main: kit: flow: BasicLogpushTransformerPreviewFlow:
+{
+  entity: "logpush_transformer_preview",
+  kind: "basic",
+  name: "BasicLogpushTransformerPreviewFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_transformer_preview_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushTransformerPreviewFlow"
+}

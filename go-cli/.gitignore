@@ -1,0 +1,4 @@
+/dist/
+/cloudflare-logpush-cli
+/go-cli
+.jostraca/

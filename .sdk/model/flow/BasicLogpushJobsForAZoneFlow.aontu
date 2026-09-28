@@ -1,0 +1,9 @@
+# BasicLogpushJobsForAZoneFlow
+
+main: kit: flow: BasicLogpushJobsForAZoneFlow:
+{
+  entity: "logpush_jobs_for_a_zone",
+  kind: "basic",
+  name: "BasicLogpushJobsForAZoneFlow",
+  "key$": "BasicLogpushJobsForAZoneFlow"
+}

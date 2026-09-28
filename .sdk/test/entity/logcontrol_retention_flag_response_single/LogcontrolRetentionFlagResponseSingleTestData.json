@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "logcontrol_retention_flag_response_single": {
+      "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE00": {
+        "flag": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE00"
+      },
+      "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE01": {
+        "flag": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE01"
+      },
+      "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE02": {
+        "flag": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "LOGCONTROL_RETENTION_FLAG_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "logcontrol_retention_flag_response_single": {
+      "logcontrol_retention_flag_response_single_ref01": {
+        "flag": true,
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /zones/{zone_id}/logs/control/retention/flag": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logs/control/retention/flag": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

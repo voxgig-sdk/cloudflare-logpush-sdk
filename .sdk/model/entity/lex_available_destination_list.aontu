@@ -1,0 +1,143 @@
+# Entity: lex_available_destination_list
+
+main: kit: entity: lex_available_destination_list: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "lex_available_destination_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/explorer/datasets/available"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/explorer/datasets/available"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              lit: "available"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logs/explorer/datasets/available"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logs/explorer/datasets/available"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              lit: "available"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

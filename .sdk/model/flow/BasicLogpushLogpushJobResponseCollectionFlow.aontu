@@ -1,0 +1,26 @@
+# BasicLogpushLogpushJobResponseCollectionFlow
+
+main: kit: flow: BasicLogpushLogpushJobResponseCollectionFlow:
+{
+  entity: "logpush_logpush_job_response_collection",
+  kind: "basic",
+  name: "BasicLogpushLogpushJobResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "logpush_logpush_job_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogpushLogpushJobResponseCollectionFlow"
+}

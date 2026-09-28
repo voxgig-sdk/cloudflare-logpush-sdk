@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "logpush_jobs_for_an_account": {
+      "LOGPUSH_JOBS_FOR_AN_ACCOUNT00": {
+        "account_id": "ACCOUNT01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_JOBS_FOR_AN_ACCOUNT00"
+      },
+      "LOGPUSH_JOBS_FOR_AN_ACCOUNT01": {
+        "account_id": "ACCOUNT01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_JOBS_FOR_AN_ACCOUNT01"
+      },
+      "LOGPUSH_JOBS_FOR_AN_ACCOUNT02": {
+        "account_id": "ACCOUNT01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_JOBS_FOR_AN_ACCOUNT02"
+      }
+    }
+  },
+  "new": {
+    "logpush_jobs_for_an_account": {
+      "logpush_jobs_for_an_account_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/logpush/jobs/{job_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "rayid": {
+      "RAYID00": {
+        "id": "RAYID00",
+        "zone_id": "ZONE01"
+      },
+      "RAYID01": {
+        "id": "RAYID01",
+        "zone_id": "ZONE01"
+      },
+      "RAYID02": {
+        "id": "RAYID02",
+        "zone_id": "ZONE01"
+      }
+    }
+  },
+  "new": {
+    "rayid": {
+      "rayid_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/logs/rayids/{ray_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

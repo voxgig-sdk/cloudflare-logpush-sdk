@@ -1,0 +1,32 @@
+# BasicLogshareFieldFlow
+
+main: kit: flow: BasicLogshareFieldFlow:
+{
+  entity: "logshare_field",
+  kind: "basic",
+  name: "BasicLogshareFieldFlow",
+  step: [
+    {
+      i: {
+        ref: "logshare_field_ref01",
+        srcdatavar: "logshare_field_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "logshare_field01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-logshare_field_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogshareFieldFlow"
+}

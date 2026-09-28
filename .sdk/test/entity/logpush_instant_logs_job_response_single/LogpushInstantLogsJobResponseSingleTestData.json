@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "logpush_instant_logs_job_response_single": {
+      "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE00": {
+        "fields": "s1e",
+        "filter": "s1f",
+        "sample": 32,
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE00"
+      },
+      "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE01": {
+        "fields": "s3c",
+        "filter": "s3d",
+        "sample": 62,
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE01"
+      },
+      "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE02": {
+        "fields": "s5a",
+        "filter": "s5b",
+        "sample": 92,
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_INSTANT_LOGS_JOB_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "logpush_instant_logs_job_response_single": {
+      "logpush_instant_logs_job_response_single_ref01": {
+        "fields": "s78",
+        "filter": "s79",
+        "sample": 122
+      }
+    }
+  },
+  "requests": {
+    "POST /zones/{zone_id}/logpush/edge/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

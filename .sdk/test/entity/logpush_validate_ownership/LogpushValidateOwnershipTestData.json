@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "logpush_validate_ownership": {
+      "LOGPUSH_VALIDATE_OWNERSHIP00": {
+        "destination_conf": "s14",
+        "ownership_challenge": "s15",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE_OWNERSHIP00"
+      },
+      "LOGPUSH_VALIDATE_OWNERSHIP01": {
+        "destination_conf": "s28",
+        "ownership_challenge": "s29",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE_OWNERSHIP01"
+      },
+      "LOGPUSH_VALIDATE_OWNERSHIP02": {
+        "destination_conf": "s3c",
+        "ownership_challenge": "s3d",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE_OWNERSHIP02"
+      }
+    }
+  },
+  "new": {
+    "logpush_validate_ownership": {
+      "logpush_validate_ownership_ref01": {
+        "destination_conf": "s50",
+        "ownership_challenge": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/ownership/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/ownership/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

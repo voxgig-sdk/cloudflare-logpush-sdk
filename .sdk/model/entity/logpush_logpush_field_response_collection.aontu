@@ -1,0 +1,164 @@
+# Entity: logpush_logpush_field_response_collection
+
+main: kit: entity: logpush_logpush_field_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "logpush_logpush_field_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logpush/datasets/{dataset_id}/fields"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "gateway_dns"
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logpush/datasets/{dataset_id}/fields"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "fields"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logpush/datasets/{dataset_id}/fields"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "http_requests"
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logpush/datasets/{dataset_id}/fields"
+          q: {
+            exist: [
+              "dataset_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "fields"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

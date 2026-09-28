@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LogpushTransformerResponseSingle | Cloudflare Logpush</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Logpush<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-logpush-sdk">voxgig-sdk/cloudflare-logpush-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Logpush</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_history_response_collection.html">AaaAuditLogsV2HistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_product_categories_response_collection.html">AaaAuditLogsV2ProductCategoriesResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_response_collection.html">AaaAuditLogsV2ResponseCollection</a>
+<a href="../api/lex_available_destination_list.html">LexAvailableDestinationList</a>
+<a href="../api/lex_dataset_detail.html">LexDatasetDetail</a>
+<a href="../api/lex_dataset_summary_list.html">LexDatasetSummaryList</a>
+<a href="../api/lex_query.html">LexQuery</a>
+<a href="../api/log_explorer_dataset.html">LogExplorerDataset</a>
+<a href="../api/logcontrol_cmb_config_for_an_account.html">LogcontrolCmbConfigForAnAccount</a>
+<a href="../api/logcontrol_cmb_config_response_single.html">LogcontrolCmbConfigResponseSingle</a>
+<a href="../api/logcontrol_retention_flag_response_single.html">LogcontrolRetentionFlagResponseSingle</a>
+<a href="../api/logpull.html">Logpull</a>
+<a href="../api/logpush_destination_exist.html">LogpushDestinationExist</a>
+<a href="../api/logpush_get_ownership.html">LogpushGetOwnership</a>
+<a href="../api/logpush_instant_logs_job_response_collection.html">LogpushInstantLogsJobResponseCollection</a>
+<a href="../api/logpush_instant_logs_job_response_single.html">LogpushInstantLogsJobResponseSingle</a>
+<a href="../api/logpush_jobs_for_a_zone.html">LogpushJobsForAZone</a>
+<a href="../api/logpush_jobs_for_an_account.html">LogpushJobsForAnAccount</a>
+<a href="../api/logpush_logpush_field_response_collection.html">LogpushLogpushFieldResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_collection.html">LogpushLogpushJobResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_single.html">LogpushLogpushJobResponseSingle</a>
+<a href="../api/logpush_transformer_content.html">LogpushTransformerContent</a>
+<a href="../api/logpush_transformer_delete.html">LogpushTransformerDelete</a>
+<a href="../api/logpush_transformer_preview.html">LogpushTransformerPreview</a>
+<a href="../api/logpush_transformer_response_collection.html">LogpushTransformerResponseCollection</a>
+<a aria-current="page" href="../api/logpush_transformer_response_single.html">LogpushTransformerResponseSingle</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idlogpushtransformers">POST /accounts/{account_id}/logpush/transformers</a>
+<a class="nav-section" href="#get-accountsaccount_idlogpushtransformerstransformer_id">GET /accounts/{account_id}/logpush/transformers/{transformer_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idlogpushtransformerstransformer_id">PUT /accounts/{account_id}/logpush/transformers/{transformer_id}</a></div>
+<a href="../api/logpush_transformer_version_response_collection.html">LogpushTransformerVersionResponseCollection</a>
+<a href="../api/logpush_validate.html">LogpushValidate</a>
+<a href="../api/logpush_validate_ownership.html">LogpushValidateOwnership</a>
+<a href="../api/logshare_field.html">LogshareField</a>
+<a href="../api/rayid.html">Rayid</a>
+<a href="../api/received.html">Received</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="logpushtransformerresponsesingle">LogpushTransformerResponseSingle</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idlogpushtransformers"><code>/accounts/{account_id}/logpush/transformers</code></a></td>
+<td><code>create</code></td>
+<td>Create transformer response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idlogpushtransformerstransformer_id"><code>/accounts/{account_id}/logpush/transformers/{transformer_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get transformer response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idlogpushtransformerstransformer_id"><code>/accounts/{account_id}/logpush/transformers/{transformer_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update transformer response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">logpush_transformer_response_single, err := client.LogpushTransformerResponseSingle(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;transformer_id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(logpush_transformer_response_single)
+created, err := client.LogpushTransformerResponseSingle(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;code&quot;: &quot;example&quot;, &quot;name&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.LogpushTransformerResponseSingle(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;transformer_id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local logpush_transformer_response_single, err = client:LogpushTransformerResponseSingle():load({ account_id = &quot;example&quot;, transformer_id = 1 })
+local created, err = client:LogpushTransformerResponseSingle():create({ account_id = &quot;example&quot;, code = &quot;example&quot;, name = &quot;example&quot; })
+local updated, err = client:LogpushTransformerResponseSingle():update({ account_id = &quot;example&quot;, transformer_id = 1 })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$logpush_transformer_response_single = $client-&gt;LogpushTransformerResponseSingle()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;transformer_id&quot; =&gt; 1]);
+$created = $client-&gt;LogpushTransformerResponseSingle()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;code&quot; =&gt; &quot;example&quot;, &quot;name&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;LogpushTransformerResponseSingle()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;transformer_id&quot; =&gt; 1]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">logpush_transformer_response_single = client.LogpushTransformerResponseSingle().load({&quot;account_id&quot;: &quot;example&quot;, &quot;transformer_id&quot;: 1})
+created = client.LogpushTransformerResponseSingle().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;code&quot;: &quot;example&quot;, &quot;name&quot;: &quot;example&quot; })
+updated = client.LogpushTransformerResponseSingle().update({&quot;account_id&quot;: &quot;example&quot;, &quot;transformer_id&quot;: 1})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">logpush_transformer_response_single = client.LogpushTransformerResponseSingle.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;transformer_id&quot; =&gt; 1 })
+created = client.LogpushTransformerResponseSingle.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;code&quot; =&gt; &quot;example&quot;, &quot;name&quot; =&gt; &quot;example&quot; })
+updated = client.LogpushTransformerResponseSingle.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;transformer_id&quot; =&gt; 1 })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const logpush_transformer_response_single = await client.LogpushTransformerResponseSingle().load({ account_id: &quot;example&quot;, transformer_id: 1 })
+const created = await client.LogpushTransformerResponseSingle().create({ account_id: &quot;example&quot;, code: &quot;example&quot;, name: &quot;example&quot; })
+const updated = await client.LogpushTransformerResponseSingle().update({ account_id: &quot;example&quot;, transformer_id: 1 })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The SQL transformer query.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional customer-provided description.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer-provided name for identification.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idlogpushtransformers" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/logpush/transformers</h3>
+<p>Operation ID: <code>post-accounts-account_id-logpush-transformers</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The SQL transformer query. Maximum 32 KB. The query must contain a FROM clause referencing a valid logpush dataset.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional customer-provided description.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer-provided name for identification.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-create-transformer-response" class="status" data-status="2xx">201: Create transformer response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-transformer-response-failure">4XX: Create transformer response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idlogpushtransformerstransformer_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/logpush/transformers/{transformer_id}</h3>
+<p>Operation ID: <code>get-accounts-account_id-logpush-transformers-transformer_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>transformer_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-get-transformer-response" class="status" data-status="2xx">200: Get transformer response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-transformer-response-failure">4XX: Get transformer response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idlogpushtransformerstransformer_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/logpush/transformers/{transformer_id}</h3>
+<p>Operation ID: <code>put-accounts-account_id-logpush-transformers-transformer_id</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>transformer_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The SQL transformer query. Maximum 32 KB. The query must contain a FROM clause referencing a valid logpush dataset.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional customer-provided description.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer-provided name for identification.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-update-transformer-response" class="status" data-status="2xx">200: Update transformer response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-transformer-response-failure">4XX: Update transformer response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

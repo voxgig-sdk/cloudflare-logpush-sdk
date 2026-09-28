@@ -1,0 +1,282 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 32
+  metrics: count: path: 42
+  metrics: count: method: 63
+
+  entity: aaa_audit_logs_v2_history_response_collection: {
+    path: "/accounts/{account_id}/logs/audit/{id}/history": {
+      rename: param: "id": *"audit_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: aaa_audit_logs_v2_product_categories_response_collection: {
+    path: "/accounts/{account_id}/logs/audit/product_categories": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: aaa_audit_logs_v2_response_collection: {
+    path: "/accounts/{account_id}/logs/audit": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: lex_available_destination_list: {
+    path: "/accounts/{account_id}/logs/explorer/datasets/available": {
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logs/explorer/datasets/available": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: lex_dataset_detail: {
+    path: "/accounts/{account_id}/logs/explorer/datasets": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/logs/explorer/datasets/{dataset_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/zones/{zone_id}/logs/explorer/datasets": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logs/explorer/datasets/{dataset_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: lex_dataset_summary_list: {
+    path: "/accounts/{account_id}/logs/explorer/datasets": {
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logs/explorer/datasets": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: lex_query: {
+    path: "/accounts/{account_id}/logs/explorer/query/sql": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logs/explorer/query/sql": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+  }
+
+  entity: log_explorer_dataset: {
+    path: "/accounts/{account_id}/logs/explorer/datasets/{dataset_id}": {
+      rename: param: "dataset_id": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/zones/{zone_id}/logs/explorer/datasets/{dataset_id}": {
+      rename: param: "dataset_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: logcontrol_cmb_config_for_an_account: {
+    path: "/accounts/{account_id}/logs/control/cmb/config": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: logcontrol_cmb_config_response_single: {
+    path: "/accounts/{account_id}/logs/control/cmb/config": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: logcontrol_retention_flag_response_single: {
+    path: "/zones/{zone_id}/logs/control/retention/flag": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: logpull: {
+    path: "/accounts/{account_id}/logs/list": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/logs/retrieve": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: logpush_destination_exist: {
+    path: "/accounts/{account_id}/logpush/validate/destination/exists": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/validate/destination/exists": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logpush_get_ownership: {
+    path: "/accounts/{account_id}/logpush/ownership": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/ownership": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logpush_instant_logs_job_response_collection: {
+    path: "/zones/{zone_id}/logpush/edge/jobs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: logpush_instant_logs_job_response_single: {
+    path: "/zones/{zone_id}/logpush/edge/jobs": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logpush_jobs_for_a_zone: {
+    path: "/zones/{zone_id}/logpush/jobs/{job_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: logpush_jobs_for_an_account: {
+    path: "/accounts/{account_id}/logpush/jobs/{job_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: logpush_logpush_field_response_collection: {
+    path: "/accounts/{account_id}/logpush/datasets/{dataset_id}/fields": {
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logpush/datasets/{dataset_id}/fields": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: logpush_logpush_job_response_collection: {
+    path: "/accounts/{account_id}/logpush/datasets/{dataset_id}/jobs": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/logpush/jobs": {
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logpush/datasets/{dataset_id}/jobs": {
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}/logpush/jobs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: logpush_logpush_job_response_single: {
+    path: "/accounts/{account_id}/logpush/jobs": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/logpush/jobs/{job_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/zones/{zone_id}/logpush/jobs": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/jobs/{job_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: logpush_transformer_content: {
+    path: "/accounts/{account_id}/logpush/transformers/{transformer_id}/content": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: logpush_transformer_delete: {
+    path: "/accounts/{account_id}/logpush/transformers/{transformer_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: logpush_transformer_preview: {
+    path: "/accounts/{account_id}/logpush/transformers/preview": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logpush_transformer_response_collection: {
+    path: "/accounts/{account_id}/logpush/transformers": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: logpush_transformer_response_single: {
+    path: "/accounts/{account_id}/logpush/transformers": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/logpush/transformers/{transformer_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: logpush_transformer_version_response_collection: {
+    path: "/accounts/{account_id}/logpush/transformers/{transformer_id}/versions": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: logpush_validate: {
+    path: "/accounts/{account_id}/logpush/validate/destination": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/logpush/validate/origin": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/validate/destination": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/validate/origin": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logpush_validate_ownership: {
+    path: "/accounts/{account_id}/logpush/ownership/validate": {
+      op: create: method: *POST
+    }
+    path: "/zones/{zone_id}/logpush/ownership/validate": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: logshare_field: {
+    path: "/zones/{zone_id}/logs/received/fields": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: rayid: {
+    path: "/zones/{zone_id}/logs/rayids/{ray_id}": {
+      rename: param: "ray_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: received: {
+    path: "/zones/{zone_id}/logs/received": {
+      op: load: method: *GET
+    }
+  }
+
+}

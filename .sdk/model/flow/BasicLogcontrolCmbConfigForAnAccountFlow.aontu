@@ -1,0 +1,9 @@
+# BasicLogcontrolCmbConfigForAnAccountFlow
+
+main: kit: flow: BasicLogcontrolCmbConfigForAnAccountFlow:
+{
+  entity: "logcontrol_cmb_config_for_an_account",
+  kind: "basic",
+  name: "BasicLogcontrolCmbConfigForAnAccountFlow",
+  "key$": "BasicLogcontrolCmbConfigForAnAccountFlow"
+}

@@ -1,0 +1,22 @@
+# BasicLogpushInstantLogsJobResponseSingleFlow
+
+main: kit: flow: BasicLogpushInstantLogsJobResponseSingleFlow:
+{
+  entity: "logpush_instant_logs_job_response_single",
+  kind: "basic",
+  name: "BasicLogpushInstantLogsJobResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_instant_logs_job_response_single_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushInstantLogsJobResponseSingleFlow"
+}

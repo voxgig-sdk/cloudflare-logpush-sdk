@@ -1,0 +1,473 @@
+# Entity: logpush_logpush_job_response_single
+
+main: kit: entity: logpush_logpush_job_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    dataset: {
+      h: "Dataset"
+      n: "dataset"
+      r: false
+      sh: "Name of the dataset."
+      t: "`$STRING`"
+    }
+    destination_conf: {
+      fo: "uri"
+      h: "Destination Conf"
+      n: "destination_conf"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Uniquely identifies a resource (such as an s3 bucket) where data."
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: false
+      sh: "Flag that indicates if the job is enabled."
+      t: "`$BOOLEAN`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      sh: "The filters to select the events to include and/or remove from your logs."
+      t: "`$STRING`"
+    }
+    filter_attack_traffic: {
+      h: "Filter Attack Traffic"
+      n: "filter_attack_traffic"
+      r: false
+      sh: "When true, excludes DDoS attack traffic from logs."
+      t: "`$BOOLEAN`"
+    }
+    frequency: {
+      de: true
+      h: "Frequency"
+      n: "frequency"
+      r: false
+      sh: "This field is deprecated."
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset)."
+      t: "`$STRING`"
+    }
+    logpull_options: {
+      de: true
+      fo: "uri-reference"
+      h: "Logpull Options"
+      n: "logpull_options"
+      r: false
+      sh: "This field is deprecated."
+      t: "`$STRING`"
+    }
+    max_upload_bytes: {
+      h: "Max Upload Bytes"
+      n: "max_upload_bytes"
+      r: false
+      sh: "The maximum uncompressed file size of a batch of logs."
+      t: "`$INTEGER`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    max_upload_interval_seconds: {
+      h: "Max Upload Interval Seconds"
+      n: "max_upload_interval_seconds"
+      r: false
+      sh: "The maximum interval in seconds for log batches."
+      t: "`$INTEGER`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    max_upload_records: {
+      h: "Max Upload Records"
+      n: "max_upload_records"
+      r: false
+      sh: "The maximum number of log lines per batch."
+      t: "`$INTEGER`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Optional human readable job name."
+      t: "`$STRING`"
+    }
+    output_options: {
+      h: "Output Options"
+      n: "output_options"
+      r: false
+      sh: "The structured replacement for `logpull_options`."
+      t: "`$OBJECT`"
+    }
+    ownership_challenge: {
+      h: "Ownership Challenge"
+      n: "ownership_challenge"
+      r: false
+      sh: "Ownership challenge token to prove destination ownership."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 2
+      }
+    }
+  }
+
+  name: "logpush_logpush_job_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logpush/jobs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logpush/jobs"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /zones/{zone_id}/logpush/jobs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/zones/{zone_id}/logpush/jobs"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "account_id"
+              "job_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "job_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "account_id"
+              "job_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /zones/{zone_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/zones/{zone_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "job_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

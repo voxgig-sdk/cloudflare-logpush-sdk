@@ -1,0 +1,263 @@
+# Entity: logpull
+
+main: kit: entity: logpull: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: false
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "logpull"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/list"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                ex: "29a92f1a6e6887d79f3401a41"
+                k: "header"
+                n: "r2_access_key_id"
+                or: "r2_access_key_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "869b6e19534a6715ab69a07d76492d673f8134d"
+                k: "header"
+                n: "r2_secret_access_key"
+                or: "r2_secret_access_key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                ex: "991fff3d2f1084b343f5a84db801fea8"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "cloudflare-logs"
+                k: "query"
+                n: "bucket"
+                or: "bucket"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2022-06-06T16:00:00Z"
+                k: "query"
+                n: "end"
+                or: "end"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 1000
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "http_requests/example.com/{DATE}"
+                k: "query"
+                n: "prefix"
+                or: "prefix"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2022-06-06T16:00:00Z"
+                k: "query"
+                n: "start"
+                or: "start"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/list"
+          q: {
+            exist: [
+              "account_id"
+              "bucket"
+              "end"
+              "limit"
+              "prefix"
+              "r2_access_key_id"
+              "r2_secret_access_key"
+              "start"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "list"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/retrieve"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                ex: "29a92f1a6e6887d79f3401a41"
+                k: "header"
+                n: "r2_access_key_id"
+                or: "r2_access_key_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "869b6e19534a6715ab69a07d76492d673f8134d"
+                k: "header"
+                n: "r2_secret_access_key"
+                or: "r2_secret_access_key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                ex: "991fff3d2f1084b343f5a84db801fea8"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "cloudflare-logs"
+                k: "query"
+                n: "bucket"
+                or: "bucket"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2022-06-06T16:00:00Z"
+                k: "query"
+                n: "end"
+                or: "end"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "http_requests/example.com/{DATE}"
+                k: "query"
+                n: "prefix"
+                or: "prefix"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2022-06-06T16:00:00Z"
+                k: "query"
+                n: "start"
+                or: "start"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/retrieve"
+          q: {
+            exist: [
+              "account_id"
+              "bucket"
+              "end"
+              "prefix"
+              "r2_access_key_id"
+              "r2_secret_access_key"
+              "start"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "retrieve"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

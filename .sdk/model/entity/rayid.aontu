@@ -1,0 +1,113 @@
+# Entity: rayid
+
+main: kit: entity: rayid: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "rayid"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logs/rayids/{ray_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "41ddf1740f67442d"
+                k: "param"
+                n: "id"
+                or: "ray_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "ClientIP,RayID,EdgeStartTimestamp"
+                k: "query"
+                n: "field"
+                or: "field"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "unixnano"
+                k: "query"
+                n: "timestamp"
+                or: "timestamp"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logs/rayids/{ray_id}"
+          q: {
+            exist: [
+              "field"
+              "id"
+              "timestamp"
+              "zone_id"
+            ]
+          }
+          r: {
+            param: {
+              ray_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "rayids"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

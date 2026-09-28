@@ -1,0 +1,130 @@
+# Entity: logpush_validate_ownership
+
+main: kit: entity: logpush_validate_ownership: {
+
+  alias: field: {}
+
+  fields: {
+    destination_conf: {
+      fo: "uri"
+      h: "Destination Conf"
+      n: "destination_conf"
+      r: true
+      sh: "Uniquely identifies a resource (such as an s3 bucket) where data."
+      t: "`$STRING`"
+    }
+    ownership_challenge: {
+      h: "Ownership Challenge"
+      n: "ownership_challenge"
+      r: true
+      sh: "Ownership challenge token to prove destination ownership."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "logpush_validate_ownership"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logpush/ownership/validate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logpush/ownership/validate"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "ownership"
+            }
+            {
+              lit: "validate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /zones/{zone_id}/logpush/ownership/validate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/zones/{zone_id}/logpush/ownership/validate"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "ownership"
+            }
+            {
+              lit: "validate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

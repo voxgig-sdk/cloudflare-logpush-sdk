@@ -1,0 +1,26 @@
+# BasicAaaAuditLogsV2ProductCategoriesResponseCollectionFlow
+
+main: kit: flow: BasicAaaAuditLogsV2ProductCategoriesResponseCollectionFlow:
+{
+  entity: "aaa_audit_logs_v2_product_categories_response_collection",
+  kind: "basic",
+  name: "BasicAaaAuditLogsV2ProductCategoriesResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aaa_audit_logs_v2_product_categories_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAaaAuditLogsV2ProductCategoriesResponseCollectionFlow"
+}

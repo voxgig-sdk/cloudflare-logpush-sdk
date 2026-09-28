@@ -1,0 +1,500 @@
+# Entity: aaa_audit_logs_v2_response_collection
+
+main: kit: entity: aaa_audit_logs_v2_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: false
+      sh: "Provides information about the result of the request, including count and cursor."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      sh: "Indicates whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "aaa_audit_logs_v2_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/audit"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a67e14daa5f8dceeb91fe5449ba496ef"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "account_name"
+                or: "account_name"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "account_name_not"
+                or: "account_name_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "success"
+                k: "query"
+                n: "action_result"
+                or: "action_result"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "success"
+                k: "query"
+                n: "action_result_not"
+                or: "action_result_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "action_type"
+                or: "action_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "action_type_not"
+                or: "action_type_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_context"
+                or: "actor_context"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_context_not"
+                or: "actor_context_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_email"
+                or: "actor_email"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_email_not"
+                or: "actor_email_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_id"
+                or: "actor_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_id_not"
+                or: "actor_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_ip_address"
+                or: "actor_ip_address"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_ip_address_not"
+                or: "actor_ip_address_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_token_id"
+                or: "actor_token_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_token_id_not"
+                or: "actor_token_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_token_name"
+                or: "actor_token_name"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_token_name_not"
+                or: "actor_token_name_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_type"
+                or: "actor_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "actor_type_not"
+                or: "actor_type_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "audit_log_id"
+                or: "audit_log_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "audit_log_id_not"
+                or: "audit_log_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2024-10-31"
+                k: "query"
+                n: "before"
+                or: "before"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "Q1buH-__DQqqig7SVYXT-SsMOTGY2Z3Y80W-fGgva7yaDdmPKveucH5ddOcHsJRhNb-xUK8agZQqkJSMAENGO8NU6g=="
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "desc"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "id_not"
+                or: "id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "product_category"
+                or: "product_category"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_cf_ray_id"
+                or: "raw_cf_ray_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_cf_ray_id_not"
+                or: "raw_cf_ray_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_method"
+                or: "raw_method"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_method_not"
+                or: "raw_method_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_status_code"
+                or: "raw_status_code"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_status_code_not"
+                or: "raw_status_code_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_uri"
+                or: "raw_uri"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "raw_uri_not"
+                or: "raw_uri_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_id"
+                or: "resource_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_id_not"
+                or: "resource_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_product"
+                or: "resource_product"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_product_not"
+                or: "resource_product_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_scope"
+                or: "resource_scope"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_scope_not"
+                or: "resource_scope_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_type"
+                or: "resource_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "resource_type_not"
+                or: "resource_type_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2024-10-30"
+                k: "query"
+                n: "since"
+                or: "since"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "zone_id"
+                or: "zone_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "zone_id_not"
+                or: "zone_id_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "zone_name"
+                or: "zone_name"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "zone_name_not"
+                or: "zone_name_not"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/audit"
+          q: {
+            exist: [
+              "account_id"
+              "account_name"
+              "account_name_not"
+              "action_result"
+              "action_result_not"
+              "action_type"
+              "action_type_not"
+              "actor_context"
+              "actor_context_not"
+              "actor_email"
+              "actor_email_not"
+              "actor_id"
+              "actor_id_not"
+              "actor_ip_address"
+              "actor_ip_address_not"
+              "actor_token_id"
+              "actor_token_id_not"
+              "actor_token_name"
+              "actor_token_name_not"
+              "actor_type"
+              "actor_type_not"
+              "audit_log_id"
+              "audit_log_id_not"
+              "before"
+              "cursor"
+              "direction"
+              "id"
+              "id_not"
+              "limit"
+              "product_category"
+              "raw_cf_ray_id"
+              "raw_cf_ray_id_not"
+              "raw_method"
+              "raw_method_not"
+              "raw_status_code"
+              "raw_status_code_not"
+              "raw_uri"
+              "raw_uri_not"
+              "resource_id"
+              "resource_id_not"
+              "resource_product"
+              "resource_product_not"
+              "resource_scope"
+              "resource_scope_not"
+              "resource_type"
+              "resource_type_not"
+              "since"
+              "zone_id"
+              "zone_id_not"
+              "zone_name"
+              "zone_name_not"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "audit"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

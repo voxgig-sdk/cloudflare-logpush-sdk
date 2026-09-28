@@ -1,0 +1,33 @@
+# BasicLogpushTransformerContentFlow
+
+main: kit: flow: BasicLogpushTransformerContentFlow:
+{
+  entity: "logpush_transformer_content",
+  kind: "basic",
+  name: "BasicLogpushTransformerContentFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_transformer_content_ref01",
+        srcdatavar: "logpush_transformer_content_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "logpush_transformer_content01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-logpush_transformer_content_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogpushTransformerContentFlow"
+}

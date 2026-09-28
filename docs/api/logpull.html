@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Logpull | Cloudflare Logpush</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Logpush<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-logpush-sdk">voxgig-sdk/cloudflare-logpush-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Logpush</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_history_response_collection.html">AaaAuditLogsV2HistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_product_categories_response_collection.html">AaaAuditLogsV2ProductCategoriesResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_response_collection.html">AaaAuditLogsV2ResponseCollection</a>
+<a href="../api/lex_available_destination_list.html">LexAvailableDestinationList</a>
+<a href="../api/lex_dataset_detail.html">LexDatasetDetail</a>
+<a href="../api/lex_dataset_summary_list.html">LexDatasetSummaryList</a>
+<a href="../api/lex_query.html">LexQuery</a>
+<a href="../api/log_explorer_dataset.html">LogExplorerDataset</a>
+<a href="../api/logcontrol_cmb_config_for_an_account.html">LogcontrolCmbConfigForAnAccount</a>
+<a href="../api/logcontrol_cmb_config_response_single.html">LogcontrolCmbConfigResponseSingle</a>
+<a href="../api/logcontrol_retention_flag_response_single.html">LogcontrolRetentionFlagResponseSingle</a>
+<a aria-current="page" href="../api/logpull.html">Logpull</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idlogslist">GET /accounts/{account_id}/logs/list</a>
+<a class="nav-section" href="#get-accountsaccount_idlogsretrieve">GET /accounts/{account_id}/logs/retrieve</a></div>
+<a href="../api/logpush_destination_exist.html">LogpushDestinationExist</a>
+<a href="../api/logpush_get_ownership.html">LogpushGetOwnership</a>
+<a href="../api/logpush_instant_logs_job_response_collection.html">LogpushInstantLogsJobResponseCollection</a>
+<a href="../api/logpush_instant_logs_job_response_single.html">LogpushInstantLogsJobResponseSingle</a>
+<a href="../api/logpush_jobs_for_a_zone.html">LogpushJobsForAZone</a>
+<a href="../api/logpush_jobs_for_an_account.html">LogpushJobsForAnAccount</a>
+<a href="../api/logpush_logpush_field_response_collection.html">LogpushLogpushFieldResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_collection.html">LogpushLogpushJobResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_single.html">LogpushLogpushJobResponseSingle</a>
+<a href="../api/logpush_transformer_content.html">LogpushTransformerContent</a>
+<a href="../api/logpush_transformer_delete.html">LogpushTransformerDelete</a>
+<a href="../api/logpush_transformer_preview.html">LogpushTransformerPreview</a>
+<a href="../api/logpush_transformer_response_collection.html">LogpushTransformerResponseCollection</a>
+<a href="../api/logpush_transformer_response_single.html">LogpushTransformerResponseSingle</a>
+<a href="../api/logpush_transformer_version_response_collection.html">LogpushTransformerVersionResponseCollection</a>
+<a href="../api/logpush_validate.html">LogpushValidate</a>
+<a href="../api/logpush_validate_ownership.html">LogpushValidateOwnership</a>
+<a href="../api/logshare_field.html">LogshareField</a>
+<a href="../api/rayid.html">Rayid</a>
+<a href="../api/received.html">Received</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="logpull">Logpull</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idlogslist"><code>/accounts/{account_id}/logs/list</code></a></td>
+<td><code>list</code></td>
+<td>List of keys matching query</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idlogsretrieve"><code>/accounts/{account_id}/logs/retrieve</code></a></td>
+<td><code>load</code></td>
+<td>Newline-delimited JSON logs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">logpulls, err := client.Logpull(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;end&quot;: &quot;example&quot;, &quot;start&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(logpulls)
+logpull, err := client.Logpull(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;end&quot;: &quot;example&quot;, &quot;start&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(logpull)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local logpulls, err = client:Logpull():list({ account_id = &quot;example&quot;, bucket = &quot;example&quot;, end = &quot;example&quot;, start = &quot;example&quot; })
+local logpull, err = client:Logpull():load({ account_id = &quot;example&quot;, bucket = &quot;example&quot;, end = &quot;example&quot;, start = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$logpulls = $client-&gt;Logpull()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;end&quot; =&gt; &quot;example&quot;, &quot;start&quot; =&gt; &quot;example&quot;]);
+$logpull = $client-&gt;Logpull()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;end&quot; =&gt; &quot;example&quot;, &quot;start&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">logpulls = client.Logpull().list({&quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;end&quot;: &quot;example&quot;, &quot;start&quot;: &quot;example&quot;})
+logpull = client.Logpull().load({&quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;end&quot;: &quot;example&quot;, &quot;start&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">logpulls = client.Logpull.list({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;end&quot; =&gt; &quot;example&quot;, &quot;start&quot; =&gt; &quot;example&quot; })
+logpull = client.Logpull.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;end&quot; =&gt; &quot;example&quot;, &quot;start&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const logpulls = await client.Logpull().list({ account_id: &quot;example&quot;, bucket: &quot;example&quot;, end: &quot;example&quot;, start: &quot;example&quot; })
+const logpull = await client.Logpull().load({ account_id: &quot;example&quot;, bucket: &quot;example&quot;, end: &quot;example&quot;, start: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idlogslist" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/logs/list</h3>
+<p>Operation ID: <code>logpull-list-log-files</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID (32-character hex string). |
+| <code>R2-Access-Key-Id</code> | <code>header</code> | <code>string</code> | Yes |  |
+| <code>R2-Secret-Access-Key</code> | <code>header</code> | <code>string</code> | Yes |  |
+| <code>start</code> | <code>query</code> | <code>string (date-time)</code> | Yes | Start time in RFC3339 format. |
+| <code>end</code> | <code>query</code> | <code>string (date-time)</code> | Yes | End time in RFC3339 format. |
+| <code>bucket</code> | <code>query</code> | <code>string</code> | Yes | R2 bucket name. |
+| <code>prefix</code> | <code>query</code> | <code>string</code> | No | R2 bucket prefix logs are stored under. |
+| <code>limit</code> | <code>query</code> | <code>integer</code> | No | Maximum number of results to return. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-list-of-keys-matching-query" class="status" data-status="2xx">200: List of keys matching query</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.keys</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Array of object keys containing logs that match the query.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-error-message-detailing-issue-with-request" class="status" data-status="4xx">400: Error message detailing issue with request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-authentication-credentials-are-missing-or-invalid" class="status" data-status="4xx">401: Authentication credentials are missing or invalid</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idlogsretrieve" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/logs/retrieve</h3>
+<p>Operation ID: <code>logpull-retrieve-logs</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID (32-character hex string). |
+| <code>R2-Access-Key-Id</code> | <code>header</code> | <code>string</code> | Yes |  |
+| <code>R2-Secret-Access-Key</code> | <code>header</code> | <code>string</code> | Yes |  |
+| <code>start</code> | <code>query</code> | <code>string (date-time)</code> | Yes | Start time in RFC3339 format. |
+| <code>end</code> | <code>query</code> | <code>string (date-time)</code> | Yes | End time in RFC3339 format. |
+| <code>bucket</code> | <code>query</code> | <code>string</code> | Yes | R2 bucket name. |
+| <code>prefix</code> | <code>query</code> | <code>string</code> | No | R2 bucket prefix logs are stored under. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-newline-delimited-json-logs" class="status" data-status="2xx">200: Newline-delimited JSON logs</h5>
+<p><code>application/json</code></p>
+<p>Example response:</p>
+<pre><code class="language-json">&quot;{\&quot;ClientIP\&quot;:\&quot;1.1.1.1\&quot;,\&quot;ClientRequestHost\&quot;:\&quot;example.com\&quot;,\&quot;ClientRequestMethod\&quot;:\&quot;GET\&quot;,\&quot;ClientRequestURI\&quot;:\&quot;/\&quot;,\&quot;EdgeEndTimestamp\&quot;:\&quot;2022-05-11T09:59:42Z\&quot;,\&quot;EdgeResponseBytes\&quot;:363,\&quot;EdgeResponseStatus\&quot;:200,\&quot;EdgeStartTimestamp\&quot;:\&quot;2022-05-11T09:59:42Z\&quot;,\&quot;RayID\&quot;:\&quot;709a103c4cefe918\&quot;}\n{\&quot;ClientIP\&quot;:\&quot;1.1.1.1\&quot;,\&quot;ClientRequestHost\&quot;:\&quot;example.com\&quot;,\&quot;ClientRequestMethod\&quot;:\&quot;GET\&quot;,\&quot;ClientRequestURI\&quot;:\&quot;/\&quot;,\&quot;EdgeEndTimestamp\&quot;:\&quot;2022-05-11T10:00:05Z\&quot;,\&quot;EdgeResponseBytes\&quot;:368,\&quot;EdgeResponseStatus\&quot;:200,\&quot;EdgeStartTimestamp\&quot;:\&quot;2022-05-11T10:00:05Z\&quot;,\&quot;RayID\&quot;:\&quot;709a10ccce7240c9\&quot;}\n&quot;
+</code></pre>
+<h5 id="400-error-message-detailing-issue-with-request-1" class="status" data-status="4xx">400: Error message detailing issue with request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-authentication-credentials-are-missing-or-invalid-1" class="status" data-status="4xx">401: Authentication credentials are missing or invalid</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

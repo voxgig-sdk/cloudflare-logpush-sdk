@@ -1,0 +1,146 @@
+# Entity: logcontrol_cmb_config_response_single
+
+main: kit: entity: logcontrol_cmb_config_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    allow_out_of_region_access: {
+      h: "Allow Out Of Region Access"
+      n: "allow_out_of_region_access"
+      r: false
+      sh: "Allow out of region access"
+      t: "`$BOOLEAN`"
+    }
+    regions: {
+      h: "Regions"
+      n: "regions"
+      r: false
+      sh: "Name of the region."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "logcontrol_cmb_config_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logs/control/cmb/config"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logs/control/cmb/config"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "control"
+            }
+            {
+              lit: "cmb"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/control/cmb/config"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/control/cmb/config"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "control"
+            }
+            {
+              lit: "cmb"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "logpush_destination_exist": {
+      "LOGPUSH_DESTINATION_EXIST00": {
+        "destination_conf": "sa",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_DESTINATION_EXIST00"
+      },
+      "LOGPUSH_DESTINATION_EXIST01": {
+        "destination_conf": "s14",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_DESTINATION_EXIST01"
+      },
+      "LOGPUSH_DESTINATION_EXIST02": {
+        "destination_conf": "s1e",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_DESTINATION_EXIST02"
+      }
+    }
+  },
+  "new": {
+    "logpush_destination_exist": {
+      "logpush_destination_exist_ref01": {
+        "destination_conf": "s28"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/validate/destination/exists": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/validate/destination/exists": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

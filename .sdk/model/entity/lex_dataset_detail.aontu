@@ -1,0 +1,410 @@
+# Entity: lex_dataset_detail
+
+main: kit: entity: lex_dataset_detail: {
+
+  alias: field: {}
+
+  fields: {
+    dataset: {
+      h: "Dataset"
+      n: "dataset"
+      r: true
+      sh: "Dataset type name to create (e.g."
+      t: "`$STRING`"
+    }
+    deletion_protection: {
+      h: "Deletion Protection"
+      n: "deletion_protection"
+      r: false
+      sh: "Set to `false` to allow deletion of this dataset."
+      t: "`$BOOLEAN`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: true
+      sh: "Whether to enable or disable log ingest for this dataset."
+      t: "`$BOOLEAN`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    fields: {
+      h: "Fields"
+      n: "fields"
+      r: false
+      sh: "Controls which fields the API ingests."
+      t: "`$ARRAY`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      sh: "Optional Logpush filter predicate to restrict which events are ingested."
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ANY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "lex_dataset_detail"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logs/explorer/datasets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logs/explorer/datasets"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /zones/{zone_id}/logs/explorer/datasets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/zones/{zone_id}/logs/explorer/datasets"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "dataset_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/zones/{zone_id}/logs/explorer/datasets/{dataset_id}"
+          q: {
+            exist: [
+              "dataset_id"
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "explorer"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

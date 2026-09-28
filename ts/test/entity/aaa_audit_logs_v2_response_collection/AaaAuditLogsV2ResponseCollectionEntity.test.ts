@@ -1,0 +1,158 @@
+
+
+import Path from 'node:path'
+import * as Fs from 'node:fs'
+
+import { test, describe, afterEach } from 'node:test'
+import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
+
+
+import { CloudflareLogpushSDK, BaseFeature, stdutil } from '../../..'
+
+import {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  loadEnvLocal,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+  maybeSkipControl,
+} from '../../utility'
+
+
+loadEnvLocal(__dirname + '/../../../.env.local')
+
+
+describe('AaaAuditLogsV2ResponseCollectionEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when CLOUDFLARE_LOGPUSH_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CLOUDFLARE_LOGPUSH_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = CloudflareLogpushSDK.test()
+    const ent = testsdk.AaaAuditLogsV2ResponseCollection()
+    assert(null != ent)
+  })
+
+
+  test('basic', async (t) => {
+
+    const live = 'TRUE' === process.env.CLOUDFLARE_LOGPUSH_TEST_LIVE
+    for (const op of ['list']) {
+      if (!live && maybeSkipControl(t, 'entityOp', 'aaa_audit_logs_v2_response_collection.' + op, live)) return
+    }
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"errors":{"a":true,"h":"Errors","n":"errors","r":false,"t":"`$ARRAY`","key$":"errors","index$":0},"result":{"a":true,"h":"Result","n":"result","r":false,"t":"`$ARRAY`","key$":"result","index$":1},"result_info":{"a":true,"h":"Result Info","n":"result_info","r":false,"sh":"Provides information about the result of the request, including count and cursor.","t":"`$OBJECT`","key$":"result_info","index$":2},"success":{"a":true,"h":"Success","n":"success","r":false,"sh":"Indicates whether the API call was successful","t":"`$BOOLEAN`","key$":"success","index$":3}},"name":"aaa_audit_logs_v2_response_collection","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /accounts/{account_id}/logs/audit","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"a67e14daa5f8dceeb91fe5449ba496ef","k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}],"query":[{"a":true,"k":"query","n":"account_name","or":"account_name","r":false,"t":"`$ARRAY`","index$":0},{"a":true,"k":"query","n":"account_name_not","or":"account_name_not","r":false,"t":"`$ARRAY`","index$":1},{"a":true,"ex":"success","k":"query","n":"action_result","or":"action_result","r":false,"t":"`$ARRAY`","index$":2},{"a":true,"ex":"success","k":"query","n":"action_result_not","or":"action_result_not","r":false,"t":"`$ARRAY`","index$":3},{"a":true,"k":"query","n":"action_type","or":"action_type","r":false,"t":"`$ARRAY`","index$":4},{"a":true,"k":"query","n":"action_type_not","or":"action_type_not","r":false,"t":"`$ARRAY`","index$":5},{"a":true,"k":"query","n":"actor_context","or":"actor_context","r":false,"t":"`$ARRAY`","index$":6},{"a":true,"k":"query","n":"actor_context_not","or":"actor_context_not","r":false,"t":"`$ARRAY`","index$":7},{"a":true,"k":"query","n":"actor_email","or":"actor_email","r":false,"t":"`$ARRAY`","index$":8},{"a":true,"k":"query","n":"actor_email_not","or":"actor_email_not","r":false,"t":"`$ARRAY`","index$":9},{"a":true,"k":"query","n":"actor_id","or":"actor_id","r":false,"t":"`$ARRAY`","index$":10},{"a":true,"k":"query","n":"actor_id_not","or":"actor_id_not","r":false,"t":"`$ARRAY`","index$":11},{"a":true,"k":"query","n":"actor_ip_address","or":"actor_ip_address","r":false,"t":"`$ARRAY`","index$":12},{"a":true,"k":"query","n":"actor_ip_address_not","or":"actor_ip_address_not","r":false,"t":"`$ARRAY`","index$":13},{"a":true,"k":"query","n":"actor_token_id","or":"actor_token_id","r":false,"t":"`$ARRAY`","index$":14},{"a":true,"k":"query","n":"actor_token_id_not","or":"actor_token_id_not","r":false,"t":"`$ARRAY`","index$":15},{"a":true,"k":"query","n":"actor_token_name","or":"actor_token_name","r":false,"t":"`$ARRAY`","index$":16},{"a":true,"k":"query","n":"actor_token_name_not","or":"actor_token_name_not","r":false,"t":"`$ARRAY`","index$":17},{"a":true,"k":"query","n":"actor_type","or":"actor_type","r":false,"t":"`$ARRAY`","index$":18},{"a":true,"k":"query","n":"actor_type_not","or":"actor_type_not","r":false,"t":"`$ARRAY`","index$":19},{"a":true,"k":"query","n":"audit_log_id","or":"audit_log_id","r":false,"t":"`$ARRAY`","index$":20},{"a":true,"k":"query","n":"audit_log_id_not","or":"audit_log_id_not","r":false,"t":"`$ARRAY`","index$":21},{"a":true,"ex":"2024-10-31","k":"query","n":"before","or":"before","r":true,"t":"`$STRING`","index$":22},{"a":true,"ex":"Q1buH-__DQqqig7SVYXT-SsMOTGY2Z3Y80W-fGgva7yaDdmPKveucH5ddOcHsJRhNb-xUK8agZQqkJSMAENGO8NU6g==","k":"query","n":"cursor","or":"cursor","r":false,"t":"`$STRING`","index$":23},{"a":true,"ex":"desc","k":"query","n":"direction","or":"direction","r":false,"t":"`$STRING`","index$":24},{"a":true,"k":"query","n":"id","or":"id","r":false,"t":"`$ARRAY`","index$":25},{"a":true,"k":"query","n":"id_not","or":"id_not","r":false,"t":"`$ARRAY`","index$":26},{"a":true,"ex":25,"k":"query","n":"limit","or":"limit","r":false,"t":"`$NUMBER`","index$":27},{"a":true,"k":"query","n":"product_category","or":"product_category","r":false,"t":"`$ARRAY`","index$":28},{"a":true,"k":"query","n":"raw_cf_ray_id","or":"raw_cf_ray_id","r":false,"t":"`$ARRAY`","index$":29},{"a":true,"k":"query","n":"raw_cf_ray_id_not","or":"raw_cf_ray_id_not","r":false,"t":"`$ARRAY`","index$":30},{"a":true,"k":"query","n":"raw_method","or":"raw_method","r":false,"t":"`$ARRAY`","index$":31},{"a":true,"k":"query","n":"raw_method_not","or":"raw_method_not","r":false,"t":"`$ARRAY`","index$":32},{"a":true,"k":"query","n":"raw_status_code","or":"raw_status_code","r":false,"t":"`$ARRAY`","index$":33},{"a":true,"k":"query","n":"raw_status_code_not","or":"raw_status_code_not","r":false,"t":"`$ARRAY`","index$":34},{"a":true,"k":"query","n":"raw_uri","or":"raw_uri","r":false,"t":"`$ARRAY`","index$":35},{"a":true,"k":"query","n":"raw_uri_not","or":"raw_uri_not","r":false,"t":"`$ARRAY`","index$":36},{"a":true,"k":"query","n":"resource_id","or":"resource_id","r":false,"t":"`$ARRAY`","index$":37},{"a":true,"k":"query","n":"resource_id_not","or":"resource_id_not","r":false,"t":"`$ARRAY`","index$":38},{"a":true,"k":"query","n":"resource_product","or":"resource_product","r":false,"t":"`$ARRAY`","index$":39},{"a":true,"k":"query","n":"resource_product_not","or":"resource_product_not","r":false,"t":"`$ARRAY`","index$":40},{"a":true,"k":"query","n":"resource_scope","or":"resource_scope","r":false,"t":"`$ARRAY`","index$":41},{"a":true,"k":"query","n":"resource_scope_not","or":"resource_scope_not","r":false,"t":"`$ARRAY`","index$":42},{"a":true,"k":"query","n":"resource_type","or":"resource_type","r":false,"t":"`$ARRAY`","index$":43},{"a":true,"k":"query","n":"resource_type_not","or":"resource_type_not","r":false,"t":"`$ARRAY`","index$":44},{"a":true,"ex":"2024-10-30","k":"query","n":"since","or":"since","r":true,"t":"`$STRING`","index$":45},{"a":true,"k":"query","n":"zone_id","or":"zone_id","r":false,"t":"`$ARRAY`","index$":46},{"a":true,"k":"query","n":"zone_id_not","or":"zone_id_not","r":false,"t":"`$ARRAY`","index$":47},{"a":true,"k":"query","n":"zone_name","or":"zone_name","r":false,"t":"`$ARRAY`","index$":48},{"a":true,"k":"query","n":"zone_name_not","or":"zone_name_not","r":false,"t":"`$ARRAY`","index$":49}]},"k":"http","m":"GET","o":"/accounts/{account_id}/logs/audit","q":{"exist":["account_id","account_name","account_name_not","action_result","action_result_not","action_type","action_type_not","actor_context","actor_context_not","actor_email","actor_email_not","actor_id","actor_id_not","actor_ip_address","actor_ip_address_not","actor_token_id","actor_token_id_not","actor_token_name","actor_token_name_not","actor_type","actor_type_not","audit_log_id","audit_log_id_not","before","cursor","direction","id","id_not","limit","product_category","raw_cf_ray_id","raw_cf_ray_id_not","raw_method","raw_method_not","raw_status_code","raw_status_code_not","raw_uri","raw_uri_not","resource_id","resource_id_not","resource_product","resource_product_not","resource_scope","resource_scope_not","resource_type","resource_type_not","since","zone_id","zone_id_not","zone_name","zone_name_not"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"logs"},{"lit":"audit"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"aaa_audit_logs_v2_response_collection","name__orig":"aaa_audit_logs_v2_response_collection","Name":"AaaAuditLogsV2ResponseCollection","name_":"aaa_audit_logs_v2_response_collection","name-":"aaa-audit-logs-v2-response-collection","NAME":"AAA_AUDIT_LOGS_V2_RESPONSE_COLLECTION","index$":2}, {"active":true,"entity":"aaa_audit_logs_v2_response_collection","key$":"BasicAaaAuditLogsV2ResponseCollectionFlow","kind":"basic","name":"BasicAaaAuditLogsV2ResponseCollectionFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{"account_id":"account01"},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"aaa_audit_logs_v2_response_collection_ref01"}}],"index$":0}]}, 'AaaAuditLogsV2ResponseCollection', {"GET /accounts/{account_id}/logs/audit":{"protocol":"http","parameters":[{"name":"account_id","in":"path","required":true,"schema":{"description":"The unique id that identifies the account.","type":"string","example":"a67e14daa5f8dceeb91fe5449ba496ef"},"index$":0},{"name":"account_name","in":"query","schema":{"description":"Filters by the account name.","type":"array","items":{"type":"string"}},"index$":1},{"name":"action_result","in":"query","schema":{"description":"Filters by whether the action was successful or not.","type":"array","items":{"enum":["success","failure"],"type":"string"},"example":"success"},"index$":2},{"name":"action_type","in":"query","schema":{"description":"Filters by the action type.","type":"array","items":{"enum":["create","delete","view","update"],"example":"create","type":"string"}},"index$":3},{"name":"actor_context","in":"query","schema":{"description":"Filters by the actor context.\n- `api`: The action was performed through the API. The specific credential type was not recorded.\n- `api_key`: The action was authenticated with a Cloudflare Global API Key.\n- `api_token`: The action was authenticated with an API token.\n- `dash`: The action was performed through the Cloudflare dashboard.\n- `oauth`: The action was authenticated with an OAuth token.\n- `origin_ca_key`: The action was authenticated with an Origin CA key.\n","type":"array","items":{"enum":["api","api_key","api_token","dash","oauth","origin_ca_key"],"example":"api_key","type":"string"}},"index$":4},{"name":"actor_email","in":"query","schema":{"description":"Filters by the actor's email address.","type":"array","items":{"example":"alice@example.com","format":"email","type":"string"}},"index$":5},{"name":"actor_id","in":"query","schema":{"description":"Filters by the actor ID. This can be either the Account ID or User ID.","type":"array","items":{"example":"1d20c3afe174f18b642710cec6298a9d","type":"string"}},"index$":6},{"name":"actor_ip_address","in":"query","schema":{"description":"The IP address where the action was initiated.","type":"array","items":{"example":"17.168.228.63","type":"string"}},"index$":7},{"name":"actor_token_id","in":"query","schema":{"description":"Filters by the API token ID when the actor context is an api_token or oauth.","type":"array","items":{"example":"144cdb2e39c55e203cf225d8d8208647","type":"string"}},"index$":8},{"name":"actor_token_name","in":"query","schema":{"description":"Filters by the API token name when the actor context is an api_token or oauth.","type":"array","items":{"example":"Test Token","type":"string"}},"index$":9},{"name":"actor_type","in":"query","schema":{"description":"Filters by the actor type.","type":"array","items":{"enum":["account","cloudflare_admin","delegated_service","system","user"],"example":"account","type":"string"}},"index$":10},{"name":"audit_log_id","in":"query","schema":{"description":"Finds a specific log by its ID.","type":"array","items":{"example":"f174be97-19b1-40d6-954d-70cd5fbd52db","type":"string"},"deprecated":true},"index$":11},{"name":"id","in":"query","schema":{"description":"Finds a specific log by its ID.","type":"array","items":{"example":"f174be97-19b1-40d6-954d-70cd5fbd52db","type":"string"}},"index$":12},{"name":"raw_cf_ray_id","in":"query","schema":{"description":"Filters by the response CF Ray ID.","type":"array","items":{"example":"8e8dd2156ef28414","type":"string"}},"index$":13},{"name":"raw_method","in":"query","schema":{"description":"The HTTP method for the API call.","type":"array","items":{"example":"GET","type":"string"}},"index$":14},{"name":"raw_status_code","in":"query","schema":{"description":"The response status code that was returned.","type":"array","items":{"example":200,"type":"integer"}},"index$":15},{"name":"raw_uri","in":"query","schema":{"description":"Filters by the request URI.","type":"array","items":{"type":"string"}},"index$":16},{"name":"resource_id","in":"query","schema":{"description":"Filters by the resource ID.","type":"array","items":{"type":"string"}},"index$":17},{"name":"resource_product","in":"query","schema":{"description":"Filters audit logs by the Cloudflare product associated with the changed resource.","type":"array","items":{"example":"Stream","type":"string"}},"index$":18},{"name":"resource_type","in":"query","schema":{"description":"Filters audit logs based on the unique type of resource changed by the action.","type":"array","items":{"example":"Video","type":"string"}},"index$":19},{"name":"resource_scope","in":"query","schema":{"description":"Filters by the resource scope, specifying whether the resource is associated with an user, an account, a zone, or a membership.","type":"array","items":{"enum":["accounts","user","zones","memberships"],"example":"accounts","type":"string"}},"index$":20},{"name":"product_category","in":"query","schema":{"description":"Filters audit logs by one or more predefined product categories. Each product category expands into a curated set of resource_product values and is unioned with any explicit resource_product filter. Matched case-insensitively; unknown product categories return 400. Repeatable. Use the audit log product categories endpoint to discover the available values.","type":"array","items":{"example":"zerotrust","type":"string"}},"index$":21},{"name":"zone_id","in":"query","schema":{"description":"Filters by the zone ID.","type":"array","items":{"type":"string"}},"index$":22},{"name":"zone_name","in":"query","schema":{"description":"Filters by the zone name associated with the change.","type":"array","items":{"example":"example.com","type":"string"}},"index$":23},{"name":"account_name.not","in":"query","schema":{"description":"Filters out audit logs by the account name.","type":"array","items":{"type":"string"}},"index$":24},{"name":"action_result.not","in":"query","schema":{"description":"Filters out audit logs by whether the action was successful or not.","type":"array","items":{"enum":["success","failure"],"type":"string"},"example":"success"},"index$":25},{"name":"action_type.not","in":"query","schema":{"description":"Filters out audit logs by the action type.","type":"array","items":{"enum":["create","delete","view","update"],"example":"create","type":"string"}},"index$":26},{"name":"actor_context.not","in":"query","schema":{"description":"Filters out audit logs by the actor context.\n- `api`: The action was performed through the API. The specific credential type was not recorded.\n- `api_key`: The action was authenticated with a Cloudflare Global API Key.\n- `api_token`: The action was authenticated with an API token.\n- `dash`: The action was performed through the Cloudflare dashboard.\n- `oauth`: The action was authenticated with an OAuth token.\n- `origin_ca_key`: The action was authenticated with an Origin CA key.\n","type":"array","items":{"enum":["api","api_key","api_token","dash","oauth","origin_ca_key"],"example":"api_key","type":"string"}},"index$":27},{"name":"actor_email.not","in":"query","schema":{"description":"Filters out audit logs by the actor's email address.","type":"array","items":{"example":"alice@example.com","format":"email","type":"string"}},"index$":28},{"name":"actor_id.not","in":"query","schema":{"description":"Filters out audit logs by the actor ID. This can be either the Account ID or User ID.","type":"array","items":{"example":"1d20c3afe174f18b642710cec6298a9d","type":"string"}},"index$":29},{"name":"actor_ip_address.not","in":"query","schema":{"description":"Filters out audit logs IP address where the action was initiated.","type":"array","items":{"example":"17.168.228.63","type":"string"}},"index$":30},{"name":"actor_token_id.not","in":"query","schema":{"description":"Filters out audit logs by the API token ID when the actor context is an api_token or oauth.","type":"array","items":{"example":"144cdb2e39c55e203cf225d8d8208647","type":"string"}},"index$":31},{"name":"actor_token_name.not","in":"query","schema":{"description":"Filters out audit logs by the API token name when the actor context is an api_token or oauth.","type":"array","items":{"example":"Test Token","type":"string"}},"index$":32},{"name":"actor_type.not","in":"query","schema":{"description":"Filters out audit logs by the actor type.","type":"array","items":{"enum":["account","cloudflare_admin","delegated_service","system","user"],"example":"account","type":"string"}},"index$":33},{"name":"audit_log_id.not","in":"query","schema":{"description":"Filters out audit logs by their IDs.","type":"array","items":{"example":"f174be97-19b1-40d6-954d-70cd5fbd52db","type":"string"},"deprecated":true},"index$":34},{"name":"id.not","in":"query","schema":{"description":"Filters out audit logs by their IDs.","type":"array","items":{"example":"f174be97-19b1-40d6-954d-70cd5fbd52db","type":"string"}},"index$":35},{"name":"raw_cf_ray_id.not","in":"query","schema":{"description":"Filters out audit logs by the response CF Ray ID.","type":"array","items":{"example":"8e8dd2156ef28414","type":"string"}},"index$":36},{"name":"raw_method.not","in":"query","schema":{"description":"Filters out audit logs by the HTTP method for the API call.","type":"array","items":{"example":"GET","type":"string"}},"index$":37},{"name":"raw_status_code.not","in":"query","schema":{"description":"Filters out audit logs by the response status code that was returned.","type":"array","items":{"example":200,"type":"integer"}},"index$":38},{"name":"raw_uri.not","in":"query","schema":{"description":"Filters out audit logs by the request URI.","type":"array","items":{"type":"string"}},"index$":39},{"name":"resource_id.not","in":"query","schema":{"description":"Filters out audit logs by the resource ID.","type":"array","items":{"type":"string"}},"index$":40},{"name":"resource_product.not","in":"query","schema":{"description":"Filters out audit logs by the Cloudflare product associated with the changed resource.","type":"array","items":{"example":"Stream","type":"string"}},"index$":41},{"name":"resource_type.not","in":"query","schema":{"description":"Filters out audit logs based on the unique type of resource changed by the action.","type":"array","items":{"example":"Video","type":"string"}},"index$":42},{"name":"resource_scope.not","in":"query","schema":{"description":"Filters out audit logs by the resource scope, specifying whether the resource is associated with an user, an account, a zone, or a membership.","type":"array","items":{"enum":["accounts","user","zones","memberships"],"example":"accounts","type":"string"}},"index$":43},{"name":"zone_id.not","in":"query","schema":{"description":"Filters out audit logs by the zone ID.","type":"array","items":{"type":"string"}},"index$":44},{"name":"zone_name.not","in":"query","schema":{"description":"Filters out audit logs by the zone name associated with the change.","type":"array","items":{"example":"example.com","type":"string"}},"index$":45},{"name":"since","in":"query","description":"Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.","required":true,"schema":{"type":"string","format":"date","example":"2024-10-30"},"index$":46},{"name":"before","in":"query","description":"Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.","required":true,"schema":{"type":"string","format":"date","example":"2024-10-31"},"index$":47},{"name":"direction","in":"query","schema":{"description":"Sets sorting order.","type":"string","example":"desc","default":"desc","enum":["desc","asc"]},"index$":48},{"name":"limit","in":"query","schema":{"description":"The number limits the objects to return. The cursor attribute may be used to iterate over the next batch of objects if there are more than the limit.","type":"number","example":25,"default":100,"maximum":1000,"minimum":1},"index$":49},{"name":"cursor","in":"query","schema":{"description":"The cursor is an opaque token used to paginate through large sets of records. It indicates the position from which to continue when requesting the next set of records. A valid cursor value can be obtained from the cursor object in the result_info structure of a previous response.","type":"string","example":"Q1buH-__DQqqig7SVYXT-SsMOTGY2Z3Y80W-fGgva7yaDdmPKveucH5ddOcHsJRhNb-xUK8agZQqkJSMAENGO8NU6g=="},"index$":50}]}})
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+    let aaa_audit_logs_v2_response_collection_ref01_data = Object.values(setup.data.existing.aaa_audit_logs_v2_response_collection)[0] as any
+
+    // LIST
+    const aaa_audit_logs_v2_response_collection_ref01_ent = client.AaaAuditLogsV2ResponseCollection()
+    const aaa_audit_logs_v2_response_collection_ref01_match: any = {}
+    aaa_audit_logs_v2_response_collection_ref01_match['account_id'] = setup.idmap['account01']
+
+    const aaa_audit_logs_v2_response_collection_ref01_list = (await aaa_audit_logs_v2_response_collection_ref01_ent.list(aaa_audit_logs_v2_response_collection_ref01_match)).map((e: any) => e.data())
+
+
+  })
+})
+
+
+
+function basicSetup(extra?: any) {
+  // TODO: fix test def options
+  const options: any = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname, 
+      '../../../../.sdk/test/entity/aaa_audit_logs_v2_response_collection/AaaAuditLogsV2ResponseCollectionTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = CloudflareLogpushSDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['aaa_audit_logs_v2_response_collection01','aaa_audit_logs_v2_response_collection02','aaa_audit_logs_v2_response_collection03','account01'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'CLOUDFLARE_LOGPUSH_TEST_AAA_AUDIT_LOGS_V2_RESPONSE_COLLECTION_ENTID': idmap,
+    'CLOUDFLARE_LOGPUSH_TEST_LIVE': 'FALSE',
+    'CLOUDFLARE_LOGPUSH_TEST_EXPLAIN': 'FALSE',
+    'CLOUDFLARE_LOGPUSH_APIKEY': '',
+  })
+
+  idmap = env['CLOUDFLARE_LOGPUSH_TEST_AAA_AUDIT_LOGS_V2_RESPONSE_COLLECTION_ENTID']
+
+  const live = 'TRUE' === env.CLOUDFLARE_LOGPUSH_TEST_LIVE
+
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['CLOUDFLARE_LOGPUSH_TEST_AAA_AUDIT_LOGS_V2_RESPONSE_COLLECTION_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new CloudflareLogpushSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+        apikey: env.CLOUDFLARE_LOGPUSH_APIKEY,
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when the
+      // last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey
+      // and server values above and handed the SDK undefined. Harmless
+      // while there was nothing in that object; not harmless now.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.CLOUDFLARE_LOGPUSH_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

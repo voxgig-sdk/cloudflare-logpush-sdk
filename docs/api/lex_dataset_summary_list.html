@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LexDatasetSummaryList | Cloudflare Logpush</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Logpush<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-logpush-sdk">voxgig-sdk/cloudflare-logpush-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Logpush</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/aaa_audit_logs_v2_history_response_collection.html">AaaAuditLogsV2HistoryResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_product_categories_response_collection.html">AaaAuditLogsV2ProductCategoriesResponseCollection</a>
+<a href="../api/aaa_audit_logs_v2_response_collection.html">AaaAuditLogsV2ResponseCollection</a>
+<a href="../api/lex_available_destination_list.html">LexAvailableDestinationList</a>
+<a href="../api/lex_dataset_detail.html">LexDatasetDetail</a>
+<a aria-current="page" href="../api/lex_dataset_summary_list.html">LexDatasetSummaryList</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idlogsexplorerdatasets">GET /accounts/{account_id}/logs/explorer/datasets</a>
+<a class="nav-section" href="#get-zoneszone_idlogsexplorerdatasets">GET /zones/{zone_id}/logs/explorer/datasets</a></div>
+<a href="../api/lex_query.html">LexQuery</a>
+<a href="../api/log_explorer_dataset.html">LogExplorerDataset</a>
+<a href="../api/logcontrol_cmb_config_for_an_account.html">LogcontrolCmbConfigForAnAccount</a>
+<a href="../api/logcontrol_cmb_config_response_single.html">LogcontrolCmbConfigResponseSingle</a>
+<a href="../api/logcontrol_retention_flag_response_single.html">LogcontrolRetentionFlagResponseSingle</a>
+<a href="../api/logpull.html">Logpull</a>
+<a href="../api/logpush_destination_exist.html">LogpushDestinationExist</a>
+<a href="../api/logpush_get_ownership.html">LogpushGetOwnership</a>
+<a href="../api/logpush_instant_logs_job_response_collection.html">LogpushInstantLogsJobResponseCollection</a>
+<a href="../api/logpush_instant_logs_job_response_single.html">LogpushInstantLogsJobResponseSingle</a>
+<a href="../api/logpush_jobs_for_a_zone.html">LogpushJobsForAZone</a>
+<a href="../api/logpush_jobs_for_an_account.html">LogpushJobsForAnAccount</a>
+<a href="../api/logpush_logpush_field_response_collection.html">LogpushLogpushFieldResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_collection.html">LogpushLogpushJobResponseCollection</a>
+<a href="../api/logpush_logpush_job_response_single.html">LogpushLogpushJobResponseSingle</a>
+<a href="../api/logpush_transformer_content.html">LogpushTransformerContent</a>
+<a href="../api/logpush_transformer_delete.html">LogpushTransformerDelete</a>
+<a href="../api/logpush_transformer_preview.html">LogpushTransformerPreview</a>
+<a href="../api/logpush_transformer_response_collection.html">LogpushTransformerResponseCollection</a>
+<a href="../api/logpush_transformer_response_single.html">LogpushTransformerResponseSingle</a>
+<a href="../api/logpush_transformer_version_response_collection.html">LogpushTransformerVersionResponseCollection</a>
+<a href="../api/logpush_validate.html">LogpushValidate</a>
+<a href="../api/logpush_validate_ownership.html">LogpushValidateOwnership</a>
+<a href="../api/logshare_field.html">LogshareField</a>
+<a href="../api/rayid.html">Rayid</a>
+<a href="../api/received.html">Received</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="lexdatasetsummarylist">LexDatasetSummaryList</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idlogsexplorerdatasets"><code>/accounts/{account_id}/logs/explorer/datasets</code></a></td>
+<td><code>list</code></td>
+<td>The datasets the account has configured</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-zoneszone_idlogsexplorerdatasets"><code>/zones/{zone_id}/logs/explorer/datasets</code></a></td>
+<td><code>list</code></td>
+<td>The datasets the zone has configured</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">lex_dataset_summary_lists, err := client.LexDatasetSummaryList(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(lex_dataset_summary_lists)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local lex_dataset_summary_lists, err = client:LexDatasetSummaryList():list({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$lex_dataset_summary_lists = $client-&gt;LexDatasetSummaryList()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">lex_dataset_summary_lists = client.LexDatasetSummaryList().list({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">lex_dataset_summary_lists = client.LexDatasetSummaryList.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const lex_dataset_summary_lists = await client.LexDatasetSummaryList().list({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idlogsexplorerdatasets" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/logs/explorer/datasets</h3>
+<p>Operation ID: <code>accounts-logs-explorer-datasets-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>include_zones</code> | <code>query</code> | <code>boolean</code> | No | Set to true to include zone-scoped datasets belonging to this account. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-the-datasets-the-account-has-configured" class="status" data-status="2xx">200: The datasets the account has configured</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>RFC3339 timestamp recording when the API created this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].dataset</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset type name (for example <code>http_requests</code>).</td>
+</tr>
+<tr>
+<td><code>result[].dataset_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique dataset ID.</td>
+</tr>
+<tr>
+<td><code>result[].deletion_protection</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether deletion is blocked. Set to <code>false</code> before deleting the dataset.</td>
+</tr>
+<tr>
+<td><code>result[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether log ingest is currently active for this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].object_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Public ID of the account or zone that owns this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].object_type</code></td>
+<td><code>enum: account, zone</code></td>
+<td>Yes</td>
+<td>Whether this dataset belongs to an account or a zone.</td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>RFC3339 timestamp recording when the API last updated this dataset.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-request-unsupported-dataset-or-invalid-field-configuration" class="status" data-status="4xx">400: Invalid request, unsupported dataset, or invalid field configuration</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-the-caller-lacks-permission-or-entitlement-to-access-this-resource" class="status" data-status="4xx">403: The caller lacks permission or entitlement to access this resource</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-the-requested-resource-does-not-exist" class="status" data-status="4xx">404: The requested resource does not exist</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-zoneszone_idlogsexplorerdatasets" class="operation" data-method="get"><code>GET</code> /zones/{zone_id}/logs/explorer/datasets</h3>
+<p>Operation ID: <code>zones-logs-explorer-datasets-list</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare zone ID. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-the-datasets-the-zone-has-configured" class="status" data-status="2xx">200: The datasets the zone has configured</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>RFC3339 timestamp recording when the API created this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].dataset</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset type name (for example <code>http_requests</code>).</td>
+</tr>
+<tr>
+<td><code>result[].dataset_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique dataset ID.</td>
+</tr>
+<tr>
+<td><code>result[].deletion_protection</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether deletion is blocked. Set to <code>false</code> before deleting the dataset.</td>
+</tr>
+<tr>
+<td><code>result[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether log ingest is currently active for this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].object_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Public ID of the account or zone that owns this dataset.</td>
+</tr>
+<tr>
+<td><code>result[].object_type</code></td>
+<td><code>enum: account, zone</code></td>
+<td>Yes</td>
+<td>Whether this dataset belongs to an account or a zone.</td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>RFC3339 timestamp recording when the API last updated this dataset.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-request-unsupported-dataset-or-invalid-field-configuration-1" class="status" data-status="4xx">400: Invalid request, unsupported dataset, or invalid field configuration</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-the-caller-lacks-permission-or-entitlement-to-access-this-resource-1" class="status" data-status="4xx">403: The caller lacks permission or entitlement to access this resource</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-the-requested-resource-does-not-exist-1" class="status" data-status="4xx">404: The requested resource does not exist</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

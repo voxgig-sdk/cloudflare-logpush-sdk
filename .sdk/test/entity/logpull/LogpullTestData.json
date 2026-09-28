@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "logpull": {
+      "LOGPULL00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "LOGPULL00"
+      },
+      "LOGPULL01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "LOGPULL01"
+      },
+      "LOGPULL02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "LOGPULL02"
+      }
+    }
+  },
+  "new": {
+    "logpull": {
+      "logpull_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/logs/list": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logs/retrieve": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

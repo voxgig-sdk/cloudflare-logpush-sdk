@@ -1,0 +1,76 @@
+# Entity: logpush_jobs_for_an_account
+
+main: kit: entity: logpush_jobs_for_an_account: {
+
+  alias: field: {}
+
+  name: "logpush_jobs_for_an_account"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/logpush/jobs/{job_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "job_id"
+                or: "job_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/logpush/jobs/{job_id}"
+          q: {
+            exist: [
+              "account_id"
+              "job_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "job_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

@@ -1,0 +1,44 @@
+# BasicLogcontrolRetentionFlagResponseSingleFlow
+
+main: kit: flow: BasicLogcontrolRetentionFlagResponseSingleFlow:
+{
+  entity: "logcontrol_retention_flag_response_single",
+  kind: "basic",
+  name: "BasicLogcontrolRetentionFlagResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "logcontrol_retention_flag_response_single_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "logcontrol_retention_flag_response_single_ref01",
+        srcdatavar: "logcontrol_retention_flag_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "logcontrol_retention_flag_response_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-logcontrol_retention_flag_response_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogcontrolRetentionFlagResponseSingleFlow"
+}

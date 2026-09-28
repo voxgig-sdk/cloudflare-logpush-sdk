@@ -1,0 +1,22 @@
+# BasicLogpushValidateOwnershipFlow
+
+main: kit: flow: BasicLogpushValidateOwnershipFlow:
+{
+  entity: "logpush_validate_ownership",
+  kind: "basic",
+  name: "BasicLogpushValidateOwnershipFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_validate_ownership_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushValidateOwnershipFlow"
+}

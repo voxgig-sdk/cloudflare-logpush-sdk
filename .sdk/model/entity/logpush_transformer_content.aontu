@@ -1,0 +1,96 @@
+# Entity: logpush_transformer_content
+
+main: kit: entity: logpush_transformer_content: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "logpush_transformer_content"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logpush/transformers/{transformer_id}/content"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 42
+                k: "param"
+                n: "transformer_id"
+                or: "transformer_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "version_id"
+                or: "version_id"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logpush/transformers/{transformer_id}/content"
+          q: {
+            exist: [
+              "account_id"
+              "transformer_id"
+              "version_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+            {
+              var: "transformer_id"
+            }
+            {
+              lit: "content"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

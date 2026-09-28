@@ -1,0 +1,33 @@
+# BasicRayidFlow
+
+main: kit: flow: BasicRayidFlow:
+{
+  entity: "rayid",
+  kind: "basic",
+  name: "BasicRayidFlow",
+  step: [
+    {
+      i: {
+        ref: "rayid_ref01",
+        srcdatavar: "rayid_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "rayid01",
+        zone_id: "zone01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-rayid_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRayidFlow"
+}

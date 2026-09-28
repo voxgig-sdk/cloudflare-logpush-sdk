@@ -1,0 +1,26 @@
+# BasicLexAvailableDestinationListFlow
+
+main: kit: flow: BasicLexAvailableDestinationListFlow:
+{
+  entity: "lex_available_destination_list",
+  kind: "basic",
+  name: "BasicLexAvailableDestinationListFlow",
+  step: [
+    {
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lex_available_destination_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLexAvailableDestinationListFlow"
+}

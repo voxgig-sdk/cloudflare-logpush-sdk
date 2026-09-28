@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "logpush_transformer_response_single": {
+      "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE00": {
+        "code": "s28",
+        "description": "s29",
+        "name": "s2a",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE00"
+      },
+      "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE01": {
+        "code": "s50",
+        "description": "s51",
+        "name": "s52",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE01"
+      },
+      "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE02": {
+        "code": "s78",
+        "description": "s79",
+        "name": "s7a",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "logpush_transformer_response_single": {
+      "logpush_transformer_response_single_ref01": {
+        "code": "sa0",
+        "description": "sa1",
+        "name": "sa2",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/transformers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logpush/transformers/{transformer_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/logpush/transformers/{transformer_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

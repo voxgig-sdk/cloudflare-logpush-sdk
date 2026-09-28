@@ -1,0 +1,22 @@
+# BasicLogpushGetOwnershipFlow
+
+main: kit: flow: BasicLogpushGetOwnershipFlow:
+{
+  entity: "logpush_get_ownership",
+  kind: "basic",
+  name: "BasicLogpushGetOwnershipFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_get_ownership_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushGetOwnershipFlow"
+}

@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "logpush_validate": {
+      "LOGPUSH_VALIDATE00": {
+        "destination_conf": "s14",
+        "logpull_options": "s15",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE00"
+      },
+      "LOGPUSH_VALIDATE01": {
+        "destination_conf": "s28",
+        "logpull_options": "s29",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE01"
+      },
+      "LOGPUSH_VALIDATE02": {
+        "destination_conf": "s3c",
+        "logpull_options": "s3d",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_VALIDATE02"
+      }
+    }
+  },
+  "new": {
+    "logpush_validate": {
+      "logpush_validate_ref01": {
+        "destination_conf": "s50",
+        "logpull_options": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/validate/destination": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/logpush/validate/origin": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/validate/destination": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/validate/origin": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

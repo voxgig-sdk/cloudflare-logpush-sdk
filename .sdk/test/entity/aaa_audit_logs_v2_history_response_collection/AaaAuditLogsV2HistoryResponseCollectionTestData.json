@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "aaa_audit_logs_v2_history_response_collection": {
+      "AAA_AUDIT_LOGS_V2_HISTORY_RESPONSE_COLLECTION00": {
+        "errors": [],
+        "result": [],
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "audit_id": "AUDIT01"
+      },
+      "AAA_AUDIT_LOGS_V2_HISTORY_RESPONSE_COLLECTION01": {
+        "errors": [],
+        "result": [],
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "audit_id": "AUDIT01"
+      },
+      "AAA_AUDIT_LOGS_V2_HISTORY_RESPONSE_COLLECTION02": {
+        "errors": [],
+        "result": [],
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "audit_id": "AUDIT01"
+      }
+    }
+  },
+  "new": {
+    "aaa_audit_logs_v2_history_response_collection": {
+      "aaa_audit_logs_v2_history_response_collection_ref01": {
+        "errors": [],
+        "result": [],
+        "result_info": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/logs/audit/{id}/history": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

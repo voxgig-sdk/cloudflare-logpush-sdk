@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "logpush_get_ownership": {
+      "LOGPUSH_GET_OWNERSHIP00": {
+        "destination_conf": "sa",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_GET_OWNERSHIP00"
+      },
+      "LOGPUSH_GET_OWNERSHIP01": {
+        "destination_conf": "s14",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_GET_OWNERSHIP01"
+      },
+      "LOGPUSH_GET_OWNERSHIP02": {
+        "destination_conf": "s1e",
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "id": "LOGPUSH_GET_OWNERSHIP02"
+      }
+    }
+  },
+  "new": {
+    "logpush_get_ownership": {
+      "logpush_get_ownership_ref01": {
+        "destination_conf": "s28"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/ownership": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/ownership": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

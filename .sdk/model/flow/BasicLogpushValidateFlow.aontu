@@ -1,0 +1,22 @@
+# BasicLogpushValidateFlow
+
+main: kit: flow: BasicLogpushValidateFlow:
+{
+  entity: "logpush_validate",
+  kind: "basic",
+  name: "BasicLogpushValidateFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_validate_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushValidateFlow"
+}

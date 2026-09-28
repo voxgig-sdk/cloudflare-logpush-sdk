@@ -1,0 +1,122 @@
+{
+  "existing": {
+    "logpush_logpush_job_response_single": {
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE00": {
+        "dataset": "s96",
+        "destination_conf": "s97",
+        "enabled": true,
+        "filter": "s99",
+        "filter_attack_traffic": true,
+        "frequency": "s9b",
+        "kind": "s9c",
+        "logpull_options": "s9d",
+        "max_upload_bytes": 158,
+        "max_upload_interval_seconds": 159,
+        "max_upload_records": 160,
+        "name": "sa1",
+        "output_options": {},
+        "ownership_challenge": "sa3",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE00"
+      },
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE01": {
+        "dataset": "s12c",
+        "destination_conf": "s12d",
+        "enabled": true,
+        "filter": "s12f",
+        "filter_attack_traffic": true,
+        "frequency": "s131",
+        "kind": "s132",
+        "logpull_options": "s133",
+        "max_upload_bytes": 308,
+        "max_upload_interval_seconds": 309,
+        "max_upload_records": 310,
+        "name": "s137",
+        "output_options": {},
+        "ownership_challenge": "s139",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE01"
+      },
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE02": {
+        "dataset": "s1c2",
+        "destination_conf": "s1c3",
+        "enabled": true,
+        "filter": "s1c5",
+        "filter_attack_traffic": true,
+        "frequency": "s1c7",
+        "kind": "s1c8",
+        "logpull_options": "s1c9",
+        "max_upload_bytes": 458,
+        "max_upload_interval_seconds": 459,
+        "max_upload_records": 460,
+        "name": "s1cd",
+        "output_options": {},
+        "ownership_challenge": "s1cf",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "job_id": "JOB01",
+        "id": "LOGPUSH_LOGPUSH_JOB_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "logpush_logpush_job_response_single": {
+      "logpush_logpush_job_response_single_ref01": {
+        "dataset": "s258",
+        "destination_conf": "s259",
+        "enabled": true,
+        "filter": "s25b",
+        "filter_attack_traffic": true,
+        "frequency": "s25d",
+        "kind": "s25e",
+        "logpull_options": "s25f",
+        "max_upload_bytes": 608,
+        "max_upload_interval_seconds": 609,
+        "max_upload_records": 610,
+        "name": "s263",
+        "output_options": {},
+        "ownership_challenge": "s265",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logpush/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logpush/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logpush/jobs/{job_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logpush/jobs/{job_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/logpush/jobs/{job_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/logpush/jobs/{job_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

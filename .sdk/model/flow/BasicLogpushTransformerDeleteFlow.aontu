@@ -1,0 +1,9 @@
+# BasicLogpushTransformerDeleteFlow
+
+main: kit: flow: BasicLogpushTransformerDeleteFlow:
+{
+  entity: "logpush_transformer_delete",
+  kind: "basic",
+  name: "BasicLogpushTransformerDeleteFlow",
+  "key$": "BasicLogpushTransformerDeleteFlow"
+}

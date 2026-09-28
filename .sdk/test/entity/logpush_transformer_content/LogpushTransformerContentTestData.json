@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "logpush_transformer_content": {
+      "LOGPUSH_TRANSFORMER_CONTENT00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_CONTENT00"
+      },
+      "LOGPUSH_TRANSFORMER_CONTENT01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_CONTENT01"
+      },
+      "LOGPUSH_TRANSFORMER_CONTENT02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_CONTENT02"
+      }
+    }
+  },
+  "new": {
+    "logpush_transformer_content": {
+      "logpush_transformer_content_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/logpush/transformers/{transformer_id}/content": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

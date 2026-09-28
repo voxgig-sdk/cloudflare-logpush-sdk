@@ -1,0 +1,27 @@
+# BasicLogpushLogpushFieldResponseCollectionFlow
+
+main: kit: flow: BasicLogpushLogpushFieldResponseCollectionFlow:
+{
+  entity: "logpush_logpush_field_response_collection",
+  kind: "basic",
+  name: "BasicLogpushLogpushFieldResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        dataset_id: "dataset01",
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "logpush_logpush_field_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLogpushLogpushFieldResponseCollectionFlow"
+}

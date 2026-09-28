@@ -1,0 +1,22 @@
+# BasicLogpushDestinationExistFlow
+
+main: kit: flow: BasicLogpushDestinationExistFlow:
+{
+  entity: "logpush_destination_exist",
+  kind: "basic",
+  name: "BasicLogpushDestinationExistFlow",
+  step: [
+    {
+      i: {
+        ref: "logpush_destination_exist_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLogpushDestinationExistFlow"
+}

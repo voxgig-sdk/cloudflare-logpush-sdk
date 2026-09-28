@@ -1,0 +1,9 @@
+# BasicLogpushJobsForAnAccountFlow
+
+main: kit: flow: BasicLogpushJobsForAnAccountFlow:
+{
+  entity: "logpush_jobs_for_an_account",
+  kind: "basic",
+  name: "BasicLogpushJobsForAnAccountFlow",
+  "key$": "BasicLogpushJobsForAnAccountFlow"
+}

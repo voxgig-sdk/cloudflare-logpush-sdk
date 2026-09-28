@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "lex_available_destination_list": {
+      "LEX_AVAILABLE_DESTINATION_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01"
+      },
+      "LEX_AVAILABLE_DESTINATION_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01"
+      },
+      "LEX_AVAILABLE_DESTINATION_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01"
+      }
+    }
+  },
+  "new": {
+    "lex_available_destination_list": {
+      "lex_available_destination_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/logs/explorer/datasets/available": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logs/explorer/datasets/available": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

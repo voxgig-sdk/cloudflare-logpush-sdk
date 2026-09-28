@@ -1,0 +1,77 @@
+# Entity: logpush_transformer_delete
+
+main: kit: entity: logpush_transformer_delete: {
+
+  alias: field: {}
+
+  name: "logpush_transformer_delete"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/logpush/transformers/{transformer_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 42
+                k: "param"
+                n: "transformer_id"
+                or: "transformer_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/logpush/transformers/{transformer_id}"
+          q: {
+            exist: [
+              "account_id"
+              "transformer_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+            {
+              var: "transformer_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

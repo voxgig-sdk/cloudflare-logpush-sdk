@@ -1,0 +1,39 @@
+# BasicLexQueryFlow
+
+main: kit: flow: BasicLexQueryFlow:
+{
+  entity: "lex_query",
+  kind: "basic",
+  name: "BasicLexQueryFlow",
+  step: [
+    {
+      i: {
+        ref: "lex_query_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "lex_query_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLexQueryFlow"
+}

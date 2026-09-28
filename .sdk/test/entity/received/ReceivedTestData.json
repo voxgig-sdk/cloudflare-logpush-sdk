@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "received": {
+      "RECEIVED00": {
+        "zone_id": "ZONE01",
+        "id": "RECEIVED00"
+      },
+      "RECEIVED01": {
+        "zone_id": "ZONE01",
+        "id": "RECEIVED01"
+      },
+      "RECEIVED02": {
+        "zone_id": "ZONE01",
+        "id": "RECEIVED02"
+      }
+    }
+  },
+  "new": {
+    "received": {
+      "received_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/logs/received": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

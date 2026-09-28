@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "logpush_logpush_job_response_collection": {
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_COLLECTION00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "zone_id": "ZONE01"
+      },
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_COLLECTION01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "zone_id": "ZONE01"
+      },
+      "LOGPUSH_LOGPUSH_JOB_RESPONSE_COLLECTION02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "zone_id": "ZONE01"
+      }
+    }
+  },
+  "new": {
+    "logpush_logpush_job_response_collection": {
+      "logpush_logpush_job_response_collection_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/logpush/datasets/{dataset_id}/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logpush/datasets/{dataset_id}/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logpush/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logpush/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

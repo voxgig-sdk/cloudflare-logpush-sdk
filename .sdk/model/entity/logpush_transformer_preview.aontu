@@ -1,0 +1,82 @@
+# Entity: logpush_transformer_preview
+
+main: kit: entity: logpush_transformer_preview: {
+
+  alias: field: {}
+
+  fields: {
+    input: {
+      h: "Input"
+      n: "input"
+      r: true
+      sh: "A single log record to transform (JSON object)."
+      t: "`$OBJECT`"
+    }
+    sql: {
+      h: "Sql"
+      n: "sql"
+      r: true
+      sh: "The SQL transformer query."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "logpush_transformer_preview"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/logpush/transformers/preview"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/logpush/transformers/preview"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logpush"
+            }
+            {
+              lit: "transformers"
+            }
+            {
+              lit: "preview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

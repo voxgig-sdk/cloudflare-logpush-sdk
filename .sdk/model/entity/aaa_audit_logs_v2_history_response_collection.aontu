@@ -1,0 +1,167 @@
+# Entity: aaa_audit_logs_v2_history_response_collection
+
+main: kit: entity: aaa_audit_logs_v2_history_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      sh: "Provides information about the result of the request, including count, cursor, and identification quality."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Indicates whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "aaa_audit_logs_v2_history_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/logs/audit/{id}/history"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "a67e14daa5f8dceeb91fe5449ba496ef"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174be97-19b1-40d6-954d-70cd5fbd52db"
+                k: "param"
+                n: "audit_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "2024-10-30T15:00:00Z"
+                k: "query"
+                n: "action_time"
+                or: "action_time"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2024-10-31"
+                k: "query"
+                n: "before"
+                or: "before"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "Q1buH-__DQqqig7SVYXT-SsMOTGY2Z3Y80W-fGgva7yaDdmPKveucH5ddOcHsJRhNb-xUK8agZQqkJSMAENGO8NU6g=="
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "desc"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "2024-10-30"
+                k: "query"
+                n: "since"
+                or: "since"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/logs/audit/{id}/history"
+          q: {
+            exist: [
+              "account_id"
+              "action_time"
+              "audit_id"
+              "before"
+              "cursor"
+              "direction"
+              "limit"
+              "since"
+            ]
+          }
+          r: {
+            param: {
+              id: "audit_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "audit"
+            }
+            {
+              var: "audit_id"
+            }
+            {
+              lit: "history"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

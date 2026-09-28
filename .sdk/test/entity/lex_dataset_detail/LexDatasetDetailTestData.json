@@ -1,0 +1,98 @@
+{
+  "existing": {
+    "lex_dataset_detail": {
+      "LEX_DATASET_DETAIL00": {
+        "dataset": "s5a",
+        "deletion_protection": false,
+        "enabled": true,
+        "errors": [],
+        "fields": [],
+        "filter": "s5f",
+        "messages": [],
+        "result": "s61",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "dataset_id": "DATASET01",
+        "id": "LEX_DATASET_DETAIL00"
+      },
+      "LEX_DATASET_DETAIL01": {
+        "dataset": "sb4",
+        "deletion_protection": false,
+        "enabled": true,
+        "errors": [],
+        "fields": [],
+        "filter": "sb9",
+        "messages": [],
+        "result": "sbb",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "dataset_id": "DATASET01",
+        "id": "LEX_DATASET_DETAIL01"
+      },
+      "LEX_DATASET_DETAIL02": {
+        "dataset": "s10e",
+        "deletion_protection": false,
+        "enabled": true,
+        "errors": [],
+        "fields": [],
+        "filter": "s113",
+        "messages": [],
+        "result": "s115",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "zone_id": "ZONE01",
+        "dataset_id": "DATASET01",
+        "id": "LEX_DATASET_DETAIL02"
+      }
+    }
+  },
+  "new": {
+    "lex_dataset_detail": {
+      "lex_dataset_detail_ref01": {
+        "dataset": "s168",
+        "deletion_protection": false,
+        "enabled": true,
+        "errors": [],
+        "fields": [],
+        "filter": "s16d",
+        "messages": [],
+        "result": "s16f",
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/logs/explorer/datasets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/logs/explorer/datasets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/logs/explorer/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/logs/explorer/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/logs/explorer/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/logs/explorer/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

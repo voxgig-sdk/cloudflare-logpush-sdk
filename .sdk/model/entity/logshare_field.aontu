@@ -1,0 +1,74 @@
+# Entity: logshare_field
+
+main: kit: entity: logshare_field: {
+
+  alias: field: {}
+
+  fields: {
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "logshare_field"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /zones/{zone_id}/logs/received/fields"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/logs/received/fields"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "logs"
+            }
+            {
+              lit: "received"
+            }
+            {
+              lit: "fields"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

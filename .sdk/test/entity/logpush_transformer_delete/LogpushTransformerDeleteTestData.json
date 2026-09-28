@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "logpush_transformer_delete": {
+      "LOGPUSH_TRANSFORMER_DELETE00": {
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_DELETE00"
+      },
+      "LOGPUSH_TRANSFORMER_DELETE01": {
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_DELETE01"
+      },
+      "LOGPUSH_TRANSFORMER_DELETE02": {
+        "account_id": "ACCOUNT01",
+        "transformer_id": "TRANSFORMER01",
+        "id": "LOGPUSH_TRANSFORMER_DELETE02"
+      }
+    }
+  },
+  "new": {
+    "logpush_transformer_delete": {
+      "logpush_transformer_delete_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/logpush/transformers/{transformer_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
